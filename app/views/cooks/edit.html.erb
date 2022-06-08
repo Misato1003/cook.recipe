@@ -8,7 +8,10 @@
     </tr>
     <tr>
       <th><%= f.label :image, "料理の写真" %></th>
-      <td><%= f.file_field :image %></td>
+      <td>
+        <img src="<%= @cook.image %>" class="cook-image"><br>
+        <%= f.file_field :image %>
+      </td>
     </tr>
     <tr>
       <th><%= f.label :point, "料理のポイント" %> </th>
