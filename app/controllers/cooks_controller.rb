@@ -1,4 +1,7 @@
 class CooksController < ApplicationController
+  # ログインユーザーにのみ実行可能にする
+  before_action :authenticate_user!
+
   def index
     @cooks = Cook.all
   end
@@ -9,6 +12,7 @@ class CooksController < ApplicationController
 
   def create
     @cook = Cook.new(params.require(:cook).permit(:name, :time, :point, :image, :ingredient, :recipe, :target_cook))
+    @cook.user_id = current_user.id
     if @cook.save
       flash[:notice] = "料理の新規登録しました"
       redirect_to :cooks
