@@ -64,3 +64,7 @@ gem 'devise'
 # 日本語化
 gem 'rails-i18n'
 gem 'devise-i18n'
+# ファイルのアップロード用
+gem 'carrierwave'
+# 画像処理ができる
+gem 'mini_magick'

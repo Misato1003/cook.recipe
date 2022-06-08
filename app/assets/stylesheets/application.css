@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+/*画像の大きさ*/
+.default_image { 
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.user-image{
+    width: 20%;
+}

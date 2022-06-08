@@ -15,6 +15,14 @@
       <!--ログインしたらプロフィールの設定、ログアウトができる、料理の登録ができる-->
       <div>
         <% if user_signed_in? %>
+          <div>
+              <l><%= current_user.username %></l>
+              <% if current_user.image.file == nil %>
+                <img src="/assets/default_icon.png" class="default_image">
+              <% else %>
+                <img src="<%= current_user.image %>" class="default_image">
+              <% end %>
+          </div>
           <nav>
             <ul>
               <li><%= link_to("プロフィール設定", "/users/edit") %></li>
