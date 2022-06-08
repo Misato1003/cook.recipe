@@ -1,6 +1,6 @@
 class CooksController < ApplicationController
-  # ログインユーザーにのみ実行可能にする
-  before_action :authenticate_user!
+  # #ログインしている人だけが投稿を行えるように[authenticate_user!]を使用
+  before_action :authenticate_user!, expect: :index
 
   def index
     @cooks = Cook.all
