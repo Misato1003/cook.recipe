@@ -1,0 +1,38 @@
+<h3>料理の一覧表</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>料理名</th>
+      <th>料理を作る際のポイント</th>
+      <th>料理の写真</th>
+      <th>料理の分類</th>
+      <th>料理の詳細</th>
+      <th>料理の編集</th>
+      <th>料理の削除</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cooks.each do |cook| %>
+      <tr>
+        <td><%= cook.id %></td>
+        <td><%= cook.name %></td>
+        <td><%= cook.point %></td>
+        <td><%= cook.image %></td>
+        <td><%= cook.target_cook %></td>
+        <td>
+          <%= link_to "料理の詳細", cook %>
+        </td>
+        <td>
+          <%= link_to "料理の編集", [:edit, cook] %>
+        </td>
+        <td>
+          <%= link_to "料理の削除", cook,method: :delete, data: { confirm: "本当に削除しますか?" } %>
+        </td>
+      </tr>
+    <% end %>  
+  </tbody>
+</table>
+
+<p><%= link_to "料理の新規登録", new_cook_path %></p>

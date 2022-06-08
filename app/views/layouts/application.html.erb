@@ -27,6 +27,7 @@
             <ul>
               <li><%= link_to("プロフィール設定", "/users/edit") %></li>
               <li><%= link_to("ログアウト", "/users/sign_out", method: :delete) %></li>
+              <li><%= link_to "料理の新規登録", new_cook_path %></li>
             </ul>
           </nav>
         <% else %>
@@ -35,7 +36,7 @@
         <% end %>
       </div>
     </header>
-    <!--ログイン、ログアウトのメッセージ-->
+    <!--ログイン、ログアウトのメッセージ--><!--フラッシュメッセージ-->
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>

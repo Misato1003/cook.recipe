@@ -1,0 +1,43 @@
+<h3>料理の詳細</h3>
+
+<table>
+  <tr>
+    <th>料理名</th>
+    <td><%= @cook.name %></td>
+  </tr>
+  <tr>
+    <th>料理の写真</th>
+    <td><%= @cook.image %></td>
+  </tr>
+  <tr>
+    <th>料理のポイント</th>
+    <td><%= @cook.point %></td>
+  </tr>
+  <tr>
+    <th>材料</th>
+    <td><%= @cook.ingredient %></td>
+  </tr>
+  <tr>
+    <th>作り方</th>
+    <td><%= @cook.recipe %></td>
+  </tr>
+  <tr>
+    <th>料理にかかった時間</th>
+    <td><%= @cook.time %></td>
+  </tr>
+  <tr>
+    <th>料理の分類</th>
+    <td><%= @cook.target_cook %></td>
+  </tr>
+</table>
+
+<div>
+  <ul>
+    <li>
+      <%= link_to "料理の一覧表に戻る", cooks_path %>
+    </li>
+    <li>
+      <%= link_to "料理の編集に戻る", [:edit, @cook] %>
+    </li>
+  </ul>
+</div>

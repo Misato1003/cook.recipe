@@ -20,5 +20,7 @@ module Myapp
     # config.eager_load_paths << Rails.root.join("extras")
     #日本語に直す
     config.i18n.default_locale = :ja
+    #日本の標準時間の設定
+    config.time_zone = 'Tokyo'
   end
 end
