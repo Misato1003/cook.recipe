@@ -1,6 +1,9 @@
 class CooksController < ApplicationController
   # ログインしている人だけが投稿を行えるように[authenticate_user!]を使用
-  before_action :authenticate_user!, expect: :index
+  before_action :authenticate_user!, except: [:index, :search, :show]
+  # 検索
+  before_action :set_cook, only: [:show, :edit, :update, :destroy]
+  before_action :set_q, only: [:index, :search]
 
   def index
     @cooks = Cook.all
@@ -48,5 +51,24 @@ class CooksController < ApplicationController
     @cook.destroy
     flash[:notice] = "料理を削除しました"
     redirect_to :cooks
+  end
+
+  # 検索できる
+  def search
+    @results = @q.result
+  end
+
+  private
+
+  def set_q
+    @q = Cook.ransack(params[:q])
+  end
+
+  def set_cook
+    @cook = Cook.find(params[:id])
+  end
+
+  def cook_params
+    params.require(:cook).permit(:name, :time, :point, :image, :ingredient, :recipe, :target_cook)
   end
 end
