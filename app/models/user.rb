@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   has_many :cooks
   has_many :likes
+  has_many :posts
 
   def liked_by?(cook_id)
     likes.where(cook_id: cook_id).exists?

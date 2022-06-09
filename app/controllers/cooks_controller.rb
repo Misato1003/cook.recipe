@@ -1,5 +1,5 @@
 class CooksController < ApplicationController
-  # #ログインしている人だけが投稿を行えるように[authenticate_user!]を使用
+  # ログインしている人だけが投稿を行えるように[authenticate_user!]を使用
   before_action :authenticate_user!, expect: :index
 
   def index
@@ -11,7 +11,8 @@ class CooksController < ApplicationController
   end
 
   def create
-    @cook = Cook.new(params.require(:cook).permit(:name, :time, :point, :image, :ingredient, :recipe, :target_cook))
+    @cook = Cook.new(params.require(:cook).permit(:name, :time, :point, :image, :ingredient, :recipe, :target_cook).
+   merge(user_id: current_user.id))
     @cook.user_id = current_user.id
     if @cook.save
       flash[:notice] = "料理の新規登録しました"
@@ -23,6 +24,8 @@ class CooksController < ApplicationController
 
   def show
     @cook = Cook.find(params[:id])
+    @post = Post.new
+    @posts = Post.where(cook_id: @cook.id)
   end
 
   def edit
@@ -31,7 +34,8 @@ class CooksController < ApplicationController
 
   def update
     @cook = Cook.find(params[:id])
-    if @cook.update(params.require(:cook).permit(:name, :time, :point, :image, :ingredient, :recipe, :target_cook))
+    if @cook.update(params.require(:cook).permit(:name, :time, :point, :image, :ingredient, :recipe, :target_cook).
+     merge(user_id: current_user.id))
       flash[:notice] = "料理の情報を更新しました"
       redirect_to :cooks
     else

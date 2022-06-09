@@ -1,9 +1,12 @@
 <h3>料理の編集</h3>
 
+<!--エラーメッセージ-->
+<%= render "shared/error", obj: @cook %>
+
 <%= form_with model: @cook do |f| %>
   <table>
     <tr>
-      <th><%= f.label :name, "名前" %></th>
+      <th><%= f.label :name, "料理名" %></th>
       <td><%= f.text_area :name %></td>
     </tr>
     <tr>
