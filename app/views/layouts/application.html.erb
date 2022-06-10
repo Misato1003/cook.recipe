@@ -28,6 +28,7 @@
               <li><%= link_to("プロフィール設定", "/users/edit") %></li>
               <li><%= link_to("ログアウト", "/users/sign_out", method: :delete) %></li>
               <li><%= link_to "料理の新規登録", new_cook_path %></li>
+              <li><%= link_to "お気に入り済みの表示", user_path(current_user.id) %></li>
           </nav>
         <% else %>
           <%= link_to("ログイン", "/users/sign_in") %>

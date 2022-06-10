@@ -2,12 +2,19 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'home#page'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  
   #検索
   resources :cooks do
     collection do
       get 'search'
     end
   end
+  
+  #お気に入り済みの料理を表示
+  resources :users, only: [:show] do
+    get :likes, on: :collection
+  end
+  
   resources :cooks
   resources :posts
   

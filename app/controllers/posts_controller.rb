@@ -49,6 +49,7 @@ class PostsController < ApplicationController
 
   private
 
+  # 投稿者自身が編集できるように設定
   def correct_user_post
     @post = Post.find(params[:id])
     @user = @post.user_id

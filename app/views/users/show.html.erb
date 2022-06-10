@@ -1,0 +1,30 @@
+<h3>お気に入り済みの料理</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>料理名</th>
+      <th>料理の作る際のポイント</th>
+      <th>料理の写真</th>
+      <th>料理の詳細</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @like_list.present? %>
+      <% @like_list.each do |cook| %>
+        <tr>
+          <td><%= cook.id %></td>
+          <td><%= cook.name %></td>
+          <td><%= cook.point %></td>
+          <td>
+            <img src="<%= cook.image %>" class="cook-image" >
+          </td>
+          <td>
+            <%= link_to "料理の詳細", cook %>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
