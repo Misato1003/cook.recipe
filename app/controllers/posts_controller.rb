@@ -2,6 +2,9 @@ class PostsController < ApplicationController
   # ログインしている人だけが投稿を行えるように[authenticate_user!]を使用
   before_action :authenticate_user!, except: :index
 
+  # 他人に編集ができないようした（投稿者自身が編集ができるようにした)
+  before_action :correct_user_post, only: [:edit, :update]
+
   def index
     @posts = Post.all
   end
@@ -42,5 +45,13 @@ class PostsController < ApplicationController
     @post.destroy
     flash[:notice] = "レビューを削除しました"
     redirect_to :posts
+  end
+
+  private
+
+  def correct_user_post
+    @post = Post.find(params[:id])
+    @user = @post.user_id
+    redirect_to(posts_path) unless @user == current_user.id
   end
 end
