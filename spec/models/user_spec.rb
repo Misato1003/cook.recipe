@@ -2,11 +2,14 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe "ユーザを登録する際、バリデーションが機能しているかどうかの確認" do
-    it "メールアドレス、パスワード(6文字以上）があれば有効であること" do
+    before do
       @user = User.new(
         email: "test@example.com",
         password: "123456"
       )
+    end
+
+    it "メールアドレス、パスワード(6文字以上）があれば有効であること" do
       expect(@user).to be_valid
     end
 
@@ -35,11 +38,6 @@ RSpec.describe User, type: :model do
         password: "345678"
       )
 
-      @user = User.new(
-        email: "test@example.com",
-        password: "123456"
-      )
-
       @user.valid?
       expect(@user.valid?).to eq(false)
     end
@@ -47,11 +45,6 @@ RSpec.describe User, type: :model do
     it "ユーザを登録する際、メールアドレスは違くて、パスワードが重複している場合、有効であること" do
       User.create(
         email: "sample@example.com",
-        password: "123456"
-      )
-
-      @user = User.new(
-        email: "test@example.com",
         password: "123456"
       )
 

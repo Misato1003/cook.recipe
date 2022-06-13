@@ -49,18 +49,18 @@ RSpec.describe "Posts", type: :request do
       end
     end
 
-    context "レビューの詳細(post_path)ログインしないと見れない" do
+    context "レビューの詳細(post_path)" do
       before do
         get post_path(@post.id)
       end
 
-      it "statusが２００であること(show)" do
+      it "レビューの詳細を確認する際、ユーザーがログインした場合　statusが２００であること(show)" do
         sign_in @user
         get cook_path(@post.id)
         expect(response).to have_http_status(200)
       end
 
-      it "statusが302であること(show)" do
+      it "レビューの詳細を確認する際、ユーザーがログインしない場合　statusが302であること(show)" do
         expect(response).to have_http_status(302)
       end
 
