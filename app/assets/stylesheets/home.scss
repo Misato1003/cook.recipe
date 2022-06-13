@@ -1,3 +1,46 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.cookImage{
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.content{
+  display: flex;
+}
+
+.cook-search{
+  margin-left: 20px;
+}
+
+.user-set{
+  text-align: center;
+}
+
+
+/*おすすめ料理*/
+.other-cook-image {
+  display: flex;
+  margin-top: 50px;
+  margin-left: 60px;
+}
+
+.other-cook {
+  padding: 0 30px;
+}
+
+.other-cook img {
+  width: 200px;
+  height: 200px;
+}
+
+.cook-name {
+  text-align: center;
+}
+
+.recommend-cook {
+  margin-left: 100px;
+  margin-top: 50px;
+}
