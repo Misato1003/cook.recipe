@@ -1,39 +1,6 @@
 <% provide :title, @post.cook.name %>
-<h3>料理の詳細</h3>
-
-<table>
-  <tr>
-    <th>料理名</th>
-    <td><%= @post.cook.name %></td>
-  </tr>
-  <tr>
-    <th>料理の写真</th>
-    <td><img src="<%= @post.cook.image %>" class="cook-image"></td>
-  </tr>
-  <tr>
-    <th>料理のポイント</th>
-    <td><%= @post.cook.point %></td>
-  </tr>
-  <tr>
-    <th>材料</th>
-    <td><%= @post.cook.ingredient %></td>
-  </tr>
-  <tr>
-    <th>作り方</th>
-    <td><%= @post.cook.recipe %></td>
-  </tr>
-  <tr>
-    <th>料理にかかった時間</th>
-    <td><%= @post.cook.time %></td>
-  </tr>
-  <tr>
-    <th>料理の分類</th>
-    <td><%= @post.cook.target_cook %></td>
-  </tr>
-</table>
-
+<%= render "cook_show.html" %>
 <h3>レビューの詳細</h3>
-
 <table>
   <tr>
     <th>レビュー内容</th>
@@ -52,7 +19,6 @@
     <td><%= @post.nickname %></td>
   </tr>
 </table>
-
 <div>
   <ul>
     <li><%= link_to "料理の一覧表", cooks_path %></li>

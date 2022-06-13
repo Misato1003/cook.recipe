@@ -1,5 +1,4 @@
-<% provide :title, @post.cook.name %>
-<h3>レビューの編集</h3>
+<h3>新規レビュー</h3>
 <%= form_with model: @post do |f| %>
   <table>
     <tr>
@@ -11,12 +10,11 @@
       <td><%= f.text_area :content %></td>
     </tr>
   </table>
+  <%= f.hidden_field :cook_id, value: @cook.id %>
+  <%= f.hidden_field :user_id, value: @user_id %>
   <div>
     <ul>
-      <li><%= f.submit "編集を完了する" %></li>
-      <li><%= link_to "レビューの一覧表", posts_path %></li>
-      <li><%= link_to "レビューの詳細", post_path %></li>
-      <li><%= link_to "料理の一覧表", cooks_path %></li>
+      <li><%= f.submit "レビューを完了する" %></li>
     </ul>
   </div>
 <% end %>

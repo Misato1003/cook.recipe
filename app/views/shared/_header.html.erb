@@ -1,0 +1,26 @@
+<header>
+<!--ログインしたらプロフィールの設定、ログアウトができる、料理の登録ができる-->
+  <div>
+    <% if user_signed_in? %>
+      <div>
+        <l><%= current_user.username %></l>
+        <% if current_user.image.file == nil %>
+          <img src="/assets/default_icon.png" class="default_image">
+        <% else %>
+          <img src="<%= current_user.image %>" class="default_image">
+        <% end %>
+      </div>
+      <nav>
+        <ul>
+          <li><%= link_to("プロフィール設定", "/users/edit") %></li>
+          <li><%= link_to("ログアウト", "/users/sign_out", method: :delete) %></li>
+          <li><%= link_to "料理の新規登録", new_cook_path %></li>
+          <li><%= link_to "お気に入り済みの表示", user_path(current_user.id) %></li>
+        </ul>
+      </nav>
+    <% else %>
+      <%= link_to("ログイン", "/users/sign_in") %>
+      <%= link_to("新規登録する", "/users/sign_up") %>
+    <% end %>
+  </div>
+</header>

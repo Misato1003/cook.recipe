@@ -13,7 +13,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params.require(:post).permit(:content, :nickname, :user_id, :cook_id).merge(user_id: current_user.id))
+    @post = Post.new(post_params.merge(user_id: current_user.id))
     if @post.save
       flash[:notice] = "新規レビューしました"
       redirect_to :posts
@@ -32,7 +32,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if @post.update(params.require(:post).permit(:content, :nickname, :user_id, :cook_id).merge(user_id: current_user.id))
+    if @post.update(post_params.merge(user_id: current_user.id))
       flash[:notice] = "レビューを更新しました"
       redirect_to :posts
     else
@@ -48,6 +48,10 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def post_params
+    params.require(:post).permit(:content, :nickname, :user_id, :cook_id)
+  end
 
   # 投稿者自身が編集できるように設定
   def correct_user_post
