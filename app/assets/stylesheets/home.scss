@@ -2,17 +2,42 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+/*料理の画像*/
 .cookImage{
   margin-top: 50px;
   margin-left: 50px;
 }
 
+/*料理の検索の部分*/
 .content{
   display: flex;
 }
 
 .cook-search{
   margin-left: 20px;
+}
+
+.cook-search-name , .cook-search-btn {
+  text-align: center;
+}
+
+
+.search-btn {
+  background-color: #ffa500;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 15px;
+  height: 30px;
+  width: 80px;
+  padding: 1px;
+  margin: 0 15px;
+  text-align: center;
+  justify-content: center;
+}
+
+.serach-cook-name, .serach-cook-ingredient {
+  text-align: center;
 }
 
 .user-set{

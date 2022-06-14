@@ -31,21 +31,20 @@ header {
   height: 150px;
 }
 
-.header-right {
-  float: right;
-  margin-right: 50px;
-  margin-top: 60px;
-}
-
 .header-left {
   display: flex;
   float: left;
-  margin-left: 100px;
+  margin-left: 20px;
 }
 
 .logo {
   width: 30%;
   margin-top: 10px;
+}
+
+.header-main {
+display: inline-flex;
+margin-top: 60px;
 }
 
 fotter{
@@ -55,6 +54,7 @@ fotter{
   background-color:  #fffff0;
   text-align: center;
   margin-top: 20px;
+  border-top: 15px solid #ffd700;
 }
 
 /*ログイン、新規登録ボタン*/
@@ -63,7 +63,7 @@ fotter{
   color: white;
   border-radius: 10px;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 18px;
   height: 20px;
   padding: 5px;
   margin: 0 15px;

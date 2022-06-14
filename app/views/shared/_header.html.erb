@@ -16,6 +16,11 @@
     </div>
   </div>
   <div class="header-right">
+    <div class="header-main">
+      <p><%= link_to "料理の一覧表", cooks_path, class: "header-login-btn" %></p>
+      <p><%= link_to "レビューの一覧表", posts_path, class: "header-login-btn" %></p>
+      <p><%= link_to "トップページ", root_path, class: "header-login-btn" %></p>
+    </div>
     <% if user_signed_in? %>
       <div id="dropdown">
         <l><%= current_user.username %></l>
