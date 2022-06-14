@@ -3,26 +3,22 @@
 <h3>レビューの詳細</h3>
 <table>
   <tr>
-    <th>レビュー内容</th>
-    <td><pre><%= @post.content %></pre></td>
+    <th>投稿者の名前</th>
+    <td><%= @post.nickname %></td>
   </tr>
   <tr>
     <th>レビューした日付</th>
     <td><%= @post.created_at.to_s(:datetime_jp) %></td>
   </tr>
   <tr>
+    <th>レビュー内容</th>
+    <td><pre><%= @post.content %></pre></td>
+  </tr>
+  <tr>
     <th>投稿者（User _id)</th>
     <td><%= @post.user_id %></td>
   </tr>
-  <tr>
-    <th>投稿者の名前</th>
-    <td><%= @post.nickname %></td>
-  </tr>
 </table>
-<div>
-  <ul>
-    <li><%= link_to "料理の一覧表", cooks_path %></li>
-    <li><%= link_to "レビューの一覧表", posts_path %></li>
-    <li><%= link_to "レビューの編集", [:edit, @post] %></li>
-  </ul>
+<div class="post-box">
+  <p><%= link_to "レビューの編集", [:edit, @post], class:"post-box-btn" %></p>
 </div>

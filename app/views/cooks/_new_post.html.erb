@@ -7,7 +7,7 @@
     </tr>
     <tr>
       <th><%= f.label :content, "レビュー内容" %></th>
-      <td><%= f.text_area :content %></td>
+      <td><%= f.text_area :content, class: "post-content" %></td>
     </tr>
   </table>
   <%= f.hidden_field :cook_id, value: @cook.id %>

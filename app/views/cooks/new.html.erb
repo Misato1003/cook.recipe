@@ -14,15 +14,15 @@
     </tr>
     <tr>
       <th><%= f.label :point, "料理のポイント" %></th>
-      <td><%= f.text_area :point %></td>
+      <td><%= f.text_area :point, class: "cook-point" %></td>
     </tr>
     <tr>
       <th><%= f.label :ingredient, "材料" %></th>
-      <td><%= f.text_area :ingredient %></td>
+      <td><%= f.text_area :ingredient , class: "cook-ingredient" %></td>
     </tr>
     <tr>
       <th><%= f.label :recipe, "作り方" %></th>
-      <td><%= f.text_area :recipe %></td>
+      <td><%= f.text_area :recipe , class: "cook-recipe" %></td>
     </tr>
     <tr>
       <th><%= f.label :time, "料理にかかった時間" %></th>
@@ -47,9 +47,7 @@
       </td>
     </tr>
   </table>
-  <div>
-    <ul>
-      <li><%= f.submit "登録完了" %></li>
-    </ul>
+  <div class="cook-box">
+    <p><%= f.submit "登録完了" , class: "cook-btn" %></p>
   </div>
 <% end %>
