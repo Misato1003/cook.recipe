@@ -1,6 +1,6 @@
 <% provide :title, @cook.name %>
 <h3>料理の詳細</h3>
-<table>
+<table class="cook-table">
   <tr>
     <th>料理名</th>
     <td><%= @cook.name %></td>
@@ -31,14 +31,7 @@
   </tr>
 </table>
 <%= render "new_post" %>
-<div>
-  <ul>
-    <li>
-      <%= link_to "料理の一覧表に戻る", cooks_path %>
-    </li>
-    <li>
-      <%= link_to "料理の編集に戻る", [:edit, @cook] %>
-    </li>
-  </ul>
+<div class="cook-box">
+  <p> <%= link_to "料理の編集に戻る", [:edit, @cook], class:"cook-box-btn" %></p>
 </div>
 <%= render "index_post" %>

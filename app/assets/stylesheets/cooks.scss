@@ -3,21 +3,73 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 table th{
-    background-color: #ffffe0;
-    padding: 10px 20px;
+  background-color: #ffffe0;
+  padding: 10px 20px;
+}
+
+.cook-table th {
+  background-color: #ffffe0;
+  padding: 10px 20px;
+  width: 150px;
 }
 
 table td{
-    background-color: #fffacd;
-    padding: 10px 20px;
+  background-color: #fffacd;
+  padding: 10px 20px;
+}
+
+table{
+  width: 60%;
+  height: 60%;
+  margin-left: 150px;
 }
 
 .notice {
-    background-color: #ffd700;
-    padding: 15px;
+  background-color: #ffd700;
+  padding: 15px;
 }
 
-.cook-image{
-    width: 50%;
-    height: 50%;
+.cook-image {
+  width: 50%;
+}
+
+h3 {
+  margin-left: 100px;
+  font-size: 30px;
+}
+
+.cook-btn {
+  background-color: #ffa500;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 15px;
+  height: 30px;
+  width: 200px;
+  padding: 1px;
+  margin: 0 15px;
+  text-align: center;
+  justify-content: center;
+}
+
+.cook-butann {
+  text-align: center;
+  margin-right: 200px;
+}
+
+.cook-box-btn {
+  background-color: #ffa500;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  height: 20px;
+  padding: 5px;
+  margin: 0 15px;
+  text-align: center;
+  justify-content: center;
+}
+
+.cook-box {
+  margin-left: 500px;
 }

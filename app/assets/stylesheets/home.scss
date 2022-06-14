@@ -40,11 +40,6 @@
   text-align: center;
 }
 
-.user-set{
-  text-align: center;
-}
-
-
 /*おすすめ料理*/
 .other-cook-image {
   display: flex;
@@ -68,4 +63,9 @@
 .recommend-cook {
   margin-left: 100px;
   margin-top: 50px;
+}
+
+/*ログイン、新規登録*/
+.user-set{
+  text-align: center;
 }

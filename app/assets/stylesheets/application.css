@@ -37,6 +37,10 @@ header {
   margin-left: 20px;
 }
 
+.header-right {
+  display: -webkit-box;
+}
+
 .logo {
   width: 30%;
   margin-top: 10px;
@@ -45,6 +49,10 @@ header {
 .header-main {
 display: inline-flex;
 margin-top: 60px;
+}
+
+.header-login {
+  margin-top: 75px;
 }
 
 fotter{
@@ -72,22 +80,28 @@ fotter{
 }
 
 /*ナビのところ*/
+
 .menu-bar {
   top: 80px;
   right: 8px;
   background-color: white;
-}
+} 
 
 
 .menu-bar ul li {
   list-style: none;
   margin: 5px 0;
-}
+} 
 
 .menu-list {
   text-decoration: none;
   color: black;
 }
+
+#dropdown {
+  margin: auto;
+}
+
 
 /*検索のところ*/
 .search {
