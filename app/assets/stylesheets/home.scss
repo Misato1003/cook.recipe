@@ -8,13 +8,65 @@
   margin-left: 50px;
 }
 
+@media screen and (max-width: 769px) {
+  .cookImage{
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+}
+
+@media screen and (max-width: 480px){
+  .cookImage{
+    margin-top: 0px;
+    margin-left: 0px;
+ }
+}
+
+@media screen and (max-width: 769px) {
+  .image-cook { 
+    max-width: 85%;
+  }
+}
+
+@media screen and (max-width: 480px){
+  .image-cook {
+    max-width: 100%;
+ }
+}
+
 /*料理の検索の部分*/
 .content{
   display: flex;
 }
 
+@media screen and (max-width: 769px) {
+  .content{
+  display: block;
+}
+}
+
+@media screen and (max-width: 480px){
+  .content{
+  display: block;
+}
+}
+
 .cook-search{
   margin-left: 20px;
+}
+
+@media screen and (max-width: 769px) {
+  .cook-search {
+    text-align: center;
+    max-width: 75%;
+  }
+}
+
+@media screen and (max-width: 480px){
+  .cook-search {
+    text-align: center;
+    max-width: 100%;
+  }
 }
 
 .cook-search-name , .cook-search-btn {
@@ -41,12 +93,29 @@
 }
 
 /*おすすめ料理*/
+
 .other-cook-image {
   display: flex;
   margin-top: 50px;
   margin-left: 60px;
 }
 
+@media screen and (max-width: 769px) {
+  .other-cook-image {
+    display: block;
+    margin-top: 50px;
+    margin-right: 150px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px){
+  .other-cook-image {
+    display: block;
+    margin-top: 50px;
+    margin-left: 60px;
+  }
+}
 .other-cook {
   padding: 0 30px;
 }

@@ -1,10 +1,10 @@
 <header>
 <!--ログインしたらプロフィールの設定、ログアウトができる、料理の登録ができる-->
   <div class="header-left">
-    <div>
+    <div id="hader-logo">
       <%= link_to image_tag("https://document-export.canva.com/bCLks/DAFDedbCLks/63/thumbnail/0001.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQYCGKMUHWDTJW6UD%2F20220612%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220612T174536Z&X-Amz-Expires=66775&X-Amz-Signature=72e45600473196710eded8623d1b9753e038afe5643b7fb6aa3f922dec4d3bba&X-Amz-SignedHeaders=host&response-expires=Mon%2C%2013%20Jun%202022%2012%3A18%3A31%20GMT", class:"logo"), "/" %>
     </div>
-    <div>
+    <div class="cook-search-cook">
       <p class="search">料理を検索する</p>
       <%= search_form_for @q, url: search_cooks_path do |f| %>
         <div>

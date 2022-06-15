@@ -37,6 +37,7 @@ header {
   margin-left: 20px;
 }
 
+
 .header-right {
   display: -webkit-box;
 }
@@ -44,6 +45,23 @@ header {
 .logo {
   width: 30%;
   margin-top: 10px;
+  display: none;
+}
+
+@media screen and (max-width: 769px) {
+  .header-left {
+    display: block;
+    float: left;
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 480px){
+  .header-left {
+    display: block;
+    float: left;
+    margin-left: 20px;
+  }
 }
 
 .header-main {
@@ -51,8 +69,41 @@ display: inline-flex;
 margin-top: 60px;
 }
 
+@media screen and (max-width: 769px) {
+  .header-main {
+    display: block;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 480px){
+  .header-main {
+    display: block;
+    margin-top: 10px;
+    margin-left: -250px;
+  }
+}
+
 .header-login {
   margin-top: 75px;
+}
+
+@media screen and (max-width: 769px) {
+  .header-login {
+    display: grid;
+    margin-top: 40px;
+    margin-left: -20px;
+  }
+}
+
+@media screen and (max-width: 480px){ 
+  .header-login {
+    display: block;
+    display: grid;
+    margin-top: 40px;
+    margin-left: -20px;
+    width: 100px;
+  }
 }
 
 fotter{
@@ -71,37 +122,13 @@ fotter{
   color: white;
   border-radius: 10px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 15px;
   height: 20px;
   padding: 5px;
   margin: 0 15px;
   text-align: center;
   justify-content: center;
 }
-
-/*ナビのところ*/
-
-.menu-bar {
-  top: 80px;
-  right: 8px;
-  background-color: white;
-} 
-
-
-.menu-bar ul li {
-  list-style: none;
-  margin: 5px 0;
-} 
-
-.menu-list {
-  text-decoration: none;
-  color: black;
-}
-
-#dropdown {
-  margin: auto;
-}
-
 
 /*検索のところ*/
 .search {
@@ -124,4 +151,75 @@ fotter{
 
 .search-button {
   text-align: center;
+}
+
+@media screen and (max-width: 769px) {
+  .cook-search-cook {
+    margin-left: 150px;
+    margin-top: -140px;
+}
+}
+
+@media screen and (max-width: 480px){
+  .cook-search-cook {
+    display: none;
+  }
+}
+/*ナビのところ*/
+
+.menu-bar {
+  top: 80px;
+  right: 8px;
+  background-color: white;
+} 
+
+@media screen and (max-width: 769px) {
+  .menu-bar {
+    top: 80px;
+    right: 8px;
+    background-color: white;
+    margin-left: -200px;
+    font-size: 12px;
+    margin-top: 100px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .menu-bar {
+    top: 80px;
+    right: 8px;
+    background-color: white;
+    margin-left: -200px;
+    font-size: 8px;
+    margin-top: 115px;
+  }
+}
+
+.menu-bar ul li {
+  list-style: none;
+  margin: 5px 0;
+} 
+
+.menu-list {
+  text-decoration: none;
+  color: black;
+}
+
+#dropdown {
+  margin: auto;
+}
+
+@media screen and (max-width: 769px) {
+  #dropdown {
+    margin-top: 30px;
+    margin-left: -15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #dropdown {
+    margin-top: 30px;
+    margin-left: -15px;
+    font-size: 13px;
+  }
 }
