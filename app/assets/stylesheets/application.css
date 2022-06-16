@@ -65,8 +65,8 @@ header {
 }
 
 .header-main {
-display: inline-flex;
-margin-top: 60px;
+  display: inline-flex;
+  margin-top: 60px;
 }
 
 @media screen and (max-width: 769px) {
@@ -157,7 +157,7 @@ fotter{
   .cook-search-cook {
     margin-left: 150px;
     margin-top: -140px;
-}
+  }
 }
 
 @media screen and (max-width: 480px){
@@ -165,6 +165,7 @@ fotter{
     display: none;
   }
 }
+
 /*ナビのところ*/
 
 .menu-bar {
