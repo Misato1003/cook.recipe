@@ -43,9 +43,23 @@ header {
 }
 
 .logo {
-  width: 30%;
+  width: 40%;
   margin-top: 10px;
   display: none;
+}
+
+@media screen and (max-width: 769px) {
+.logo {
+  width: 30%;
+  margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 480px){
+.logo {
+  width: 25%;
+  margin-top: 35px;
+  }
 }
 
 @media screen and (max-width: 769px) {
@@ -80,7 +94,7 @@ header {
   .header-main {
     display: block;
     margin-top: 10px;
-    margin-left: -250px;
+    margin-left: -230px;
   }
 }
 
