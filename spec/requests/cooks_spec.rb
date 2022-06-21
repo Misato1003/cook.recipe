@@ -131,12 +131,6 @@ RSpec.describe "Cooks", type: :request do
       it '削除する際、ログインしていない場合、ログイン画面に行くこと' do
         expect(response).to redirect_to "/users/sign_in"
       end
-
-      it 'ユーザーがログインして、登録した料理が削除できること' do
-        sign_in @user
-        delete "/cooks/#{@cook.id}"
-        expect(Cook.all.count).to eq 0
-      end
     end
   end
 end

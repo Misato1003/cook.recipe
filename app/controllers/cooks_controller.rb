@@ -52,7 +52,7 @@ class CooksController < ApplicationController
     flash[:notice] = "料理を削除しました"
     redirect_to :cooks
   end
-  
+
   # 検索できる(料理)
   def search
     @results = @q.result
