@@ -2,8 +2,8 @@ class PostsController < ApplicationController
   # ログインしている人だけが投稿を行えるように[authenticate_user!]を使用
   before_action :authenticate_user!, except: :index
 
-  # 他人に編集ができないようした（投稿者自身が編集ができるようにした)
-  before_action :correct_user_post, only: [:edit, :update]
+  # 他人に編集,削除ができないようした（投稿者自身が編集ができるようにした)
+  before_action :correct_user_post, only: [:edit, :update, :destroy]
 
   def index
     @posts = Post.all

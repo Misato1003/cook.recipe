@@ -6,9 +6,9 @@ class User < ApplicationRecord
 
   mount_uploader :image, ImageUploader # userモデルと画像を紐づける
 
-  has_many :cooks
-  has_many :likes
-  has_many :posts
+  has_many :cooks, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :posts, dependent: :destroy
 
   def liked_by?(cook_id)
     likes.where(cook_id: cook_id).exists?

@@ -1,8 +1,8 @@
 class CooksController < ApplicationController
   # ログインしている人だけが投稿を行えるように[authenticate_user!]を使用
   before_action :authenticate_user!, except: [:index, :search, :show]
-  # 他人に編集ができないようした（投稿者自身が編集ができるようにした)
-  before_action :correct_user_cook, only: [:edit, :update]
+  # 他人に編集,削除ができないようした（投稿者自身が編集ができるようにした)
+  before_action :correct_user_cook, only: [:edit, :update, :destroy]
   # 検索
   before_action :set_cook, only: [:show, :edit, :update, :destroy]
   before_action :set_q, only: [:index, :search]
@@ -52,7 +52,7 @@ class CooksController < ApplicationController
     flash[:notice] = "料理を削除しました"
     redirect_to :cooks
   end
-
+  
   # 検索できる(料理)
   def search
     @results = @q.result
