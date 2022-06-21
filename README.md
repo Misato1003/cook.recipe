@@ -12,7 +12,7 @@
 
    オリジナルのポートフォリオになります。
    
-   　　https://new-cook-recipe.herokuapp.com/
+   　https://new-cook-recipe.herokuapp.com/
      
      
 (3) 実装した機能
