@@ -7,7 +7,7 @@ class Cook < ApplicationRecord
   validates :ingredient, presence: true
   validates :recipe, presence: true
 
-  belongs_to :user
+  has_many :users
   has_many :likes
   has_many :posts
 end

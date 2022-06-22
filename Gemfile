@@ -68,3 +68,5 @@ gem 'devise-i18n'
 gem 'carrierwave'
 # 画像処理ができる
 gem 'mini_magick'
+# 検索機能
+gem 'ransack'
