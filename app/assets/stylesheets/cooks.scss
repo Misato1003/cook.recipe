@@ -1,0 +1,23 @@
+// Place all the styles related to the cooks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+table th{
+    background-color: #ffffe0;
+    padding: 10px 20px;
+}
+
+table td{
+    background-color: #fffacd;
+    padding: 10px 20px;
+}
+
+.notice {
+    background-color: #ffd700;
+    padding: 15px;
+}
+
+.cook-image{
+    width: 50%;
+    height: 50%;
+}
