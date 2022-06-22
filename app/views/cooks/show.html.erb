@@ -31,6 +31,27 @@
   </tr>
 </table>
 
+<h3>新規レビュー</h3>
+
+<%= form_with model: @post do |f| %>
+  <table>
+    <tr>
+      <th><%= f.label :nickname, "投稿者の名前" %></th>
+      <td><%= f.text_field :nickname %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :content, "レビュー内容" %></th>
+      <td><%= f.text_area :content %></td>
+    </tr>
+  </table>
+  <%= f.hidden_field :cook_id, value: @cook.id %>
+  <%= f.hidden_field :user_id, value: @user_id %>
+  <div>
+    <ul>
+      <li><%= f.submit "レビューを完了する" %></li>
+    </ul>
+  </div>
+<% end %>
 <div>
   <ul>
     <li>
@@ -41,3 +62,26 @@
     </li>
   </ul>
 </div>
+
+<h3>レビュー一覧表</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>レビュー内容</th>
+      <th>レビューした日付</th>
+      <th>投稿者（User _id)</th>
+      <th>投稿者の名前</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.content %></td>
+        <td><%= post.created_at.to_s(:datetime_jp) %></td>
+        <td><%= post.user_id %></td>
+        <td><%= post.nickname %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

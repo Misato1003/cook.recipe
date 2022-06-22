@@ -6,4 +6,8 @@ class Cook < ApplicationRecord
   validates :name, presence: true
   validates :ingredient, presence: true
   validates :recipe, presence: true
+
+  belongs_to :user
+  has_many :likes
+  has_many :posts
 end

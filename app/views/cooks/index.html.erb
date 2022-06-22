@@ -8,6 +8,7 @@
       <th>料理を作る際のポイント</th>
       <th>料理の写真</th>
       <th>料理の分類</th>
+      <th>お気に入り</th>
       <th>料理の詳細</th>
       <th>料理の編集</th>
       <th>料理の削除</th>
@@ -21,6 +22,15 @@
         <td><%= cook.point %></td>
         <td><img src="<%= cook.image%>" class="cook-image" ></td>
         <td><%= cook.target_cook %></td>
+        <% if current_user.liked_by?(cook.id) %>
+          <td>
+            <%= link_to 'お気に入りをはずす', destroy_like_path(cook), method: :DELETE %>
+          </td>
+        <% else %>
+          <td>
+            <%= link_to "お気に入り", create_like_path(cook), method: :POST %>
+          </td>
+        <% end %>
         <td>
           <%= link_to "料理の詳細", cook %>
         </td>
@@ -36,3 +46,4 @@
 </table>
 
 <p><%= link_to "料理の新規登録", new_cook_path %></p>
+<p><%= link_to "レビューの一覧表", posts_path %></p>

@@ -5,4 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   mount_uploader :image, ImageUploader # userモデルと画像を紐づける
+
+  has_many :cooks
+  has_many :likes
+  has_many :posts
+
+  def liked_by?(cook_id)
+    likes.where(cook_id: cook_id).exists?
+  end
 end
