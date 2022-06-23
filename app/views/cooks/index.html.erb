@@ -11,9 +11,9 @@
         <% if user_signed_in? && current_user != @cooks %>
           <th>お気に入り</th>
         <% end %>
-        <th>料理の詳細</th>
-        <th>料理の編集</th>
-        <th>料理の削除</th>
+        <th>詳細</th>
+        <th>編集</th>
+        <th>削除</th>
       </tr>
     </thead>
     <tbody>
@@ -36,13 +36,13 @@
             <% end %>
           <% end %>
           <td>
-            <%= link_to "料理の詳細", cook %>
+            <%= link_to "詳細", cook %>
           </td>
           <td>
-            <%= link_to "料理の編集", [:edit, cook] %>
+            <%= link_to "編集", [:edit, cook] %>
           </td>
           <td>
-            <%= link_to "料理の削除", cook,method: :delete, data: { confirm: "本当に削除しますか?" } %>
+            <%= link_to "削除", cook,method: :delete, data: { confirm: "本当に削除しますか?" } %>
           </td>
         </tr>
       <% end %>  
