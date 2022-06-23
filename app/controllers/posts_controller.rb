@@ -18,7 +18,8 @@ class PostsController < ApplicationController
       flash[:notice] = "新規レビューしました"
       redirect_to :posts
     else
-      render "posts"
+      flash[:notice] = "新規レビューが登録できませんでした"
+      redirect_to :posts
     end
   end
 

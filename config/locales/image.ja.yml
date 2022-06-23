@@ -12,12 +12,3 @@ ja:
       mini_magick_processing_error: "MiniMagickがファイルを処理できませんでした。画像を確認してください。エラーメッセージ: %{e}"
       min_size_error: "を%{min_size}以上のサイズにしてください"
       max_size_error: "を%{max_size}以下のサイズにしてください"
-  
-  activerecord:
-     models:
-        cook: 料理
-     attributes:
-        cook:
-           name: 料理名
-           ingredient: 材料
-           recipe: 作り方

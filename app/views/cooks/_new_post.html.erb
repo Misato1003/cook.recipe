@@ -2,11 +2,11 @@
 <%= form_with model: @post do |f| %>
   <table>
     <tr>
-      <th><%= f.label :nickname, "投稿者の名前" %></th>
+      <th><%= f.label :nickname, "投稿者の名前" %></br>(必須)</th>
       <td><%= f.text_field :nickname %></td>
     </tr>
     <tr>
-      <th><%= f.label :content, "レビュー内容" %></th>
+      <th><%= f.label :content, "レビュー内容" %></br>(必須)</th>
       <td><%= f.text_area :content, class: "post-content" %></td>
     </tr>
   </table>
