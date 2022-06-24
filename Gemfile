@@ -56,6 +56,8 @@ group :development do
   # rubocopの導入
   gem 'rubocop', require: false
   gem 'rubocop-airbnb'
+  #ER図
+  gem 'rails-erd'
 end
 
 group :test do
