@@ -3,21 +3,221 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 table th{
-    background-color: #ffffe0;
-    padding: 10px 20px;
+  background-color: #ffffe0;
+  padding: 10px 20px;
+}
+
+.cook-table th {
+  background-color: #ffffe0;
+  padding: 10px 20px;
+  width: 15px;
 }
 
 table td{
-    background-color: #fffacd;
-    padding: 10px 20px;
+  background-color: #fffacd;
+  padding: 10px 20px;
+}
+
+table{
+  width: 60%;
+  height: 60%;
+  margin-left: 150px;
+}
+
+@media screen and (max-width: 769px) {
+  table {
+    width: 100%;
+    height: 0%;
+    margin-left: 0px;
+  }
+}
+
+.cook-title {
+  padding: inherit;
+}
+
+.point-cook {
+  padding: inherit;
+}
+
+.show-cook-time {
+  padding: inherit;
+}
+  
+@media screen and (max-width: 480px) {
+  .cook-index-table,
+  .cook-index-table td,
+  .cook-index-table th {
+    border: 1px solod #cbced2;
+    border-collapse: collapse;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px) {  
+  .cook-index-table thead th {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {  
+  .cook-index-table tbody th {
+    background: #ffffe0;
+    padding: 4px 12px;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .cook-index-table td {
+    background: #fffacd;
+    padding: 4px 12px;
+    display: block;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .cook-index-table td[data-title]::before {
+    color: #666;
+    content: attr(data-title) " :";
+    font-weight: bold;
+    padding: 0 10px 0 0;
+    display: inline;
+  }
 }
 
 .notice {
-    background-color: #ffd700;
-    padding: 15px;
+  background-color: #ffd700;
+  padding: 15px;
 }
 
-.cook-image{
-    width: 50%;
-    height: 50%;
+.cook-image {
+  width: 50%;
+}
+
+@media screen and (max-width: 480px) {
+  .cook-image {
+    width: 120px;
+  }
+}
+
+h3 {
+  margin-left: 100px;
+  font-size: 20px;
+}
+
+.cook-btn {
+  background-color: #ffa500;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 15px;
+  height: 30px;
+  width: 200px;
+  padding: 1px;
+  margin: 0 15px;
+  text-align: center;
+  justify-content: center;
+}
+
+.cook-butann {
+  text-align: center;
+  margin-right: 200px;
+}
+
+@media screen and (max-width: 480px) {
+  .cook-butann {
+    text-align: center;
+    margin-right: -120px;
+  }
+}
+
+.cook-box-btn {
+  background-color: #ffa500;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  height: 20px;
+  padding: 5px;
+  margin: 0 15px;
+  text-align: center;
+  justify-content: center;
+}
+
+.cook-box {
+  margin-left: 500px;
+}
+
+@media screen and (max-width: 480px) {
+  .cook-box{
+    margin-right: -60px;
+    margin-left: 100px;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .cook-box {
+    margin-left: 180px;
+  }
+}
+
+
+/*入力ホームのところ*/
+.cook-ingredient {
+  height: 150px;
+  width: 400px;
+}
+
+.cook-recipe {
+  height: 300px;
+  width: 400px;
+}
+
+.cook-point {
+  height: 60px;
+  width: 400px;
+}
+
+.post-content {
+  height: 100px;
+  width: 400px;
+}
+
+@media screen and (max-width: 480px) {
+  .cook-ingredient {
+    height: 150px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .cook-recipe {
+    height: 300px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .cook-point {
+    height: 90px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .post-content {
+    height: 100px;
+    width: 200px;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .cook-content {
+    width: 100%;
+  }
 }

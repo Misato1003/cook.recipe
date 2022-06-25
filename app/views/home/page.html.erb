@@ -1,42 +1,48 @@
-<h1>料理を検索する</h1>
-
-  <%= search_form_for @q, url: search_cooks_path do |f| %>
-    <div>
-      <%= f.label :name_cont, "料理名" %>
-      <%= f.search_field :name_cont %>
-    </div>
-    <div>
-      <%= f.label :time, "料理にかかった時間" %>
-      <%= f.radio_button :time_lteq, '' %>指定しない
-      <%= f.radio_button :time_lteq, '20' %>20分未満
-      <%= f.radio_button :time_lteq, '30' %>30分未満
-      <%= f.radio_button :time_lteq, '40' %>40分未満
-      <%= f.radio_button :time_lteq, '50' %>50分未満
-      <%= f.radio_button :time_gteq, '60' %>1時間以上
-    </div>
-    <div>
-      <%= f.label :ingredient_cont, "食材" %>
-      <%= f.search_field :ingredient_cont %>
-    </div>
-    <div>
-      <%= f.label :target_cook, "料理の分類" %>
-      <%= f.radio_button :target_cook_cont, '' %>指定なし
-      <%= f.radio_button :target_cook_cont, '洋風' %>洋風
-      <%= f.radio_button :target_cook_cont, '和風' %>和風
-      <%= f.radio_button :target_cook_cont, '中華' %>中華
-      <%= f.radio_button :target_cook_cont, '肉類' %>肉類
-      <%= f.radio_button :target_cook_cont, '魚類' %>魚類
-      <%= f.radio_button :target_cook_cont, '卵' %>卵
-      <%= f.radio_button :target_cook_cont, '菓子類' %>菓子類
-      <%= f.radio_button :target_cook_cont, '野菜' %>野菜
-      <%= f.radio_button :target_cook_cont, 'ご飯もの' %>ご飯もの
-      <%= f.radio_button :target_cook_cont, 'パン' %>パン
-      <%= f.radio_button :target_cook_cont, '麺類' %>麺類
-      <%= f.radio_button :target_cook_cont, 'お弁当' %>お弁当
-    </div>
-    
-    <p><%= f.submit "検索" %></p>
-  <% end %>
-
-  <p><%= link_to "料理の一覧表", cooks_path %></p>
-  <p><%= link_to "レビューの一覧表", posts_path %></p>
+<div class="gest-login">
+  <%= link_to 'ゲストログイン（閲覧用）', home_guest_sign_in_path, method: :post, class: "gest-login-buttan" %>
+</div>
+<div class="content">
+  <div class="cookImage">
+    <img src="https://mi-journey.jp/foodie/wp-content/uploads/2020/05/200599ethnic1.jpg" alt="料理の写真" class="image-cook" >
+  </div>
+  <div class="cook-search" style="margin-block: auto;">
+    <h1 class="cook-search-name">料理を検索する</h1>
+    <%= search_form_for @q, url: search_cooks_path do |f| %>
+      <div class="serach-cook-name">
+        <%= f.label :name_cont, "料理名" %></br>
+        <%= f.search_field :name_cont %>
+      </div>
+      <div>
+        <%= f.label :time, "料理にかかった時間" %></br>
+        <%= f.radio_button :time_lteq, '' %>指定しない
+        <%= f.radio_button :time_lteq, '20' %>20分未満
+        <%= f.radio_button :time_lteq, '30' %>30分未満
+        <%= f.radio_button :time_lteq, '40' %>40分未満
+        <%= f.radio_button :time_lteq, '50' %>50分未満
+        <%= f.radio_button :time_gteq, '60' %>1時間以上
+      </div>
+      <div class="serach-cook-ingredient">
+        <%= f.label :ingredient_cont, "食材" %></br>
+        <%= f.search_field :ingredient_cont %>
+      </div>
+      <div>
+        <%= f.label :target_cook, "料理の分類" %></br>
+        <%= f.radio_button :target_cook_cont, '' %>指定なし
+        <%= f.radio_button :target_cook_cont, '洋風' %>洋風
+        <%= f.radio_button :target_cook_cont, '和風' %>和風
+        <%= f.radio_button :target_cook_cont, '中華' %>中華
+        <%= f.radio_button :target_cook_cont, '肉類' %>肉類
+        <%= f.radio_button :target_cook_cont, '魚類' %>魚類
+        <%= f.radio_button :target_cook_cont, '卵' %>卵
+        <%= f.radio_button :target_cook_cont, '菓子類' %>菓子類
+        <%= f.radio_button :target_cook_cont, '野菜' %>野菜
+        <%= f.radio_button :target_cook_cont, 'ご飯もの' %>ご飯もの
+        <%= f.radio_button :target_cook_cont, 'パン' %>パン
+        <%= f.radio_button :target_cook_cont, '麺類' %>麺類
+        <%= f.radio_button :target_cook_cont, 'お弁当' %>お弁当
+      </div>
+      <p class="cook-search-btn"><%= f.submit "検索" , class: "search-btn" %></p>
+    <% end %>
+  </div>
+</div>
+<%= render "recommend_cook" %>

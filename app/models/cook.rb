@@ -8,6 +8,6 @@ class Cook < ApplicationRecord
   validates :recipe, presence: true
 
   has_many :users
-  has_many :likes
-  has_many :posts
+  has_many :likes, dependent: :destroy
+  has_many :posts, dependent: :destroy
 end

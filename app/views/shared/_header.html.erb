@@ -1,0 +1,48 @@
+<header>
+<!--ログインしたらプロフィールの設定、ログアウトができる、料理の登録ができる-->
+  <div class="header-left">
+    <div id="hader-logo">
+      <%= link_to image_tag("/assets/logo-1 Small.jpeg", class:"logo"), "/" %>
+    </div>
+    <div class="cook-search-cook">
+      <p class="search">料理を検索する</p>
+      <%= search_form_for @q, url: search_cooks_path do |f| %>
+        <div>
+          <%= f.label :name_cont, "料理名" %>
+          <%= f.search_field :name_cont %>
+        </div>
+        <p class="search-button"><%= f.submit "検索" , class: "search-btn" %></p>
+      <% end %>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="header-main">
+      <p><%= link_to "料理の一覧表", cooks_path, class: "header-login-btn" %></p>
+      <p><%= link_to "レビューの一覧表", posts_path, class: "header-login-btn" %></p>
+      <p><%= link_to "トップページ", root_path, class: "header-login-btn" %></p>
+    </div>
+    <% if user_signed_in? %>
+      <div id="dropdown">
+        <l><%= current_user.username %></l>
+        <% if current_user.image.file == nil %>
+          <img src="/assets/default_icon.png" class="default_image">
+        <% else %>
+          <img src="<%= current_user.image %>" class="default_image">
+        <% end %>
+      </div>
+      <nav class="menu-bar hidden">
+        <ul>
+          <li><%= link_to("プロフィール設定", "/users/edit", class: "menu-list") %></li>
+          <li><%= link_to("ログアウト", "/users/sign_out", method: :delete, class: "menu-list") %></li>
+          <li><%= link_to "料理の新規登録", new_cook_path , class: "menu-list" %></li>
+          <li><%= link_to "お気に入り済みの表示", user_path(current_user.id), class: "menu-list" %></li>
+        </ul>
+      </nav>
+    <% else %>
+      <div class="header-login">
+        <%= link_to("ログイン", "/users/sign_in", class: "header-login-btn") %>
+        <%= link_to("新規登録", "/users/sign_up", class: "header-login-btn") %>
+      </div>
+    <% end %>
+  </div>
+</header>

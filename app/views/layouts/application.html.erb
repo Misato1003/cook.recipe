@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Myapp</title>
+    <title><%= page_title(yield(:title)) %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,41 +11,94 @@
   </head>
 
   <body>
-    <header>
-      <!--ログインしたらプロフィールの設定、ログアウトができる、料理の登録ができる-->
-      <div>
-        <% if user_signed_in? %>
-          <div>
-              <l><%= current_user.username %></l>
-              <% if current_user.image.file == nil %>
-                <img src="/assets/default_icon.png" class="default_image">
-              <% else %>
-                <img src="<%= current_user.image %>" class="default_image">
-              <% end %>
-          </div>
-          <nav>
-            <ul>
-              <li><%= link_to("プロフィール設定", "/users/edit") %></li>
-              <li><%= link_to("ログアウト", "/users/sign_out", method: :delete) %></li>
-              <li><%= link_to "料理の新規登録", new_cook_path %></li>
-          </nav>
-        <% else %>
-          <%= link_to("ログイン", "/users/sign_in") %>
-          <%= link_to("新規登録する", "/users/sign_up") %>
-        <% end %>
-      </div>
-    </header>
-    <h1>料理を検索する</h1>
-    <%= search_form_for @q, url: search_cooks_path do |f| %>
-      <div>
-        <%= f.label :name_cont, "料理名" %>
-        <%= f.search_field :name_cont %>
-      </div>
-      <p><%= f.submit "検索" %></p>
-    <% end %>
+    <%= render "shared/header" %>  
     <!--ログイン、ログアウトのメッセージ--><!--フラッシュメッセージ-->
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
+    <%= render "shared/fotter" %>
   </body>
+  
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+     
+    /*ナビの項目を選択をしたら文字色が変わる*/
+    $('.menu-list').click(function() {
+      $(this).css('color', '#ffa500');
+    });
+    
+    /*ナビが乗った時に、ナビが表示される*/
+    $(function(){
+      $('#dropdown, .menu-bar').hover(
+        function(){
+          $('.menu-bar, #dropdown').fadeIn();
+        },
+        function(){
+          $('.menu-bar').fadeOut();
+        }
+        );
+    }); 
+    
+    /*ナビのところを表示させる(クリックした時に）*/
+    $('#dropdown').click(function() {
+      $('.menu-bar, #dropdown').show();
+    });
+    
+    /*ロゴを表示させる*/
+    $('.logo').fadeIn('show');
+      
+    /*ロゴをクリックしたら、回転する*/
+    $("#hader-logo .logo").hover(function() {
+      $(this).stop().animate({zIndex:1},{
+        duration:1000,
+        step:function(now){
+          $(this).css({transform:'rotateY(' + (now * 1080) + 'deg)'});
+        },
+        complete:function(){
+          $(this).css('zIndex', 0);
+        }
+      })
+    },function() {
+      $(this).css({transform:'rotateY(0deg)'});
+    });
+
+    /*画像が動く Y軸に動く*/
+    $(".cookImage").hover(function() {
+      $(this).stop().animate({zIndex:1},{
+        duration:1000,
+        step:function(now){
+          $(this).css({transform:'rotateY(' + (now * 1080) + 'deg)'});
+        },
+        complete:function(){
+          $(this).css('zIndex', 0);
+        }
+      })
+    },function() {
+      $(this).css({transform:'rotateY(0deg)'});
+    });
+
+    /*画像が動く x軸に動く*/
+    $(".cook-other-image").hover(function() {
+      $(this).stop().animate({zIndex:1},{
+        duration:800,
+        step:function(now){
+          $(this).css({transform:'rotateX(' + (now * 720) + 'deg)'});
+        },
+        complete:function(){
+          $(this).css('zIndex', 0);
+        }
+      })
+    },function() {
+      $(this).css({transform:'rotateX(0deg)'});
+    });
+
+    /*カーソルに乗ったときにボタンの色が変わる*/
+    $(function() {
+      $(".cook-btn, .cook-box-btn, .post-btn, .post-box-btn, .search-btn, .header-login-btn, .gest-login-buttan").hover(function() {
+        $(this).css("background-color", "#ff8000");
+      }, function() {
+        $(this).css("background-color", "#ffa500");
+      });
+    });
+  </script>
 </html>

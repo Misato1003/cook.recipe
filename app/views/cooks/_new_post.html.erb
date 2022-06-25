@@ -1,0 +1,18 @@
+<h3>新規レビュー</h3>
+<%= form_with model: @post do |f| %>
+  <table>
+    <tr>
+      <th><%= f.label :nickname, "投稿者の名前" %></br>(必須)</th>
+      <td><%= f.text_field :nickname %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :content, "レビュー内容" %></br>(必須)</th>
+      <td><%= f.text_area :content, class: "post-content" %></td>
+    </tr>
+  </table>
+  <%= f.hidden_field :cook_id, value: @cook.id %>
+  <%= f.hidden_field :user_id, value: @user_id %>
+  <div>
+    <p class="cook-butann"><%= f.submit "レビューを完了する", class: "cook-btn" %></p>
+  </div>
+<% end %>

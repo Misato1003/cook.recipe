@@ -1,13 +1,12 @@
 <h1>検索結果</h1>
-
-<table>
+<table class="cook-index-table">
   <thead>
     <tr>
       <th><%= sort_link(@q, :id, "ID", default_order: :desc ) %></th>
       <th><%= sort_link(@q, :name, "料理名", default_order: :desc) %></th>
-      <th>料理を作る際のポイント</th>
+      <th>料理を作るのポイント</th>
       <th>料理の写真</th>
-      <th><%= sort_link(@q, :time, "料理のかかった時間", default_order: :desc) %></th>
+      <th><%= sort_link(@q, :time, "料理にかかった時間", default_order: :desc) %></th>
       <th>料理の分類</th>
       <th>詳細</th>
       <th>編集</th>
@@ -17,19 +16,16 @@
   <tbody>
     <% @results.each do |cook| %>
       <tr>
-        <td><%= cook.id %></td>
-        <td><%= cook.name %></td>
-        <td><%= cook.point %></td>
-        <td><img src="<%= cook.image %>" class="cook-image"></td>
-        <td><%= cook.time %></td>
-        <td><%= cook.target_cook %></td>
-        <td><%= link_to "詳細", cook %></td>
-        <td><%= link_to "編集", edit_cook_path(cook) %></td>
-        <td><%= link_to "削除", cook, method: :delete, date: { confirm:'Are you sure?' } %></td>
+        <th><%= cook.id %></th>
+        <td data-title="料理名" class="cook-title"><%= cook.name %></td>
+        <td data-title="料理を作るのポイント" class="point-cook"><%= simple_format(cook.point) %></td>
+        <td data-title="料理の写真"><img src="<%= cook.image %>" class="cook-image"></td>
+        <td data-title="料理にかかった時間"><%= cook.time %></td>
+        <td data-title="料理の分類"><%= cook.target_cook %></td>
+        <td data-title="詳細"><%= link_to "詳細", cook %></td>
+        <td data-title="編集"><%= link_to "編集", edit_cook_path(cook) %></td>
+        <td data-title="削除"><%= link_to "削除", cook, method: :delete, date: { confirm:'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<%= link_to '料理一覧表に戻る', cooks_path %>
-<%= link_to 'トップページに戻る', root_path %>

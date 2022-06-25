@@ -1,12 +1,10 @@
 <h3>レビュー一覧表</h3>
-
 <table>
   <thead>
     <tr>
-      <th>レビュー内容</th>
-      <th>レビューした日付</th>
-      <th>投稿者（User _id)</th>
       <th>投稿者の名前</th>
+      <th>レビューした日付</th>
+      <th>レビュー内容</th>
       <th>詳細</th>
       <th>編集</th>
       <th>削除</th>
@@ -15,10 +13,9 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= post.content %></td>
-        <td><%= post.created_at.to_s(:datetime_jp) %></td>
-        <td><%= post.user_id %></td>
         <td><%= post.nickname %></td>
+        <td><%= post.created_at.to_s(:datetime_jp) %></td>
+        <td><%= post.content %></td>
         <td>
           <%= link_to "詳細", post %>
         </td>
@@ -32,6 +29,3 @@
     <% end %>
   </tbody>  
 </table>
-
-<p><%= link_to "料理の一覧表", cooks_path %></p>
-<p><%= link_to "トップページ", root_path %></p>

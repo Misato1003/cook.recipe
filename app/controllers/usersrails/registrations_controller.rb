@@ -59,4 +59,14 @@ class Usersrails::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+  # ゲストユーザーが削除できないようにする（更新・編集ができないようにする）
+  before_action :ensure_normal_user, only: :destroy
+  before_action :ensure_normal_user, only: %i(update destroy)
+
+  def ensure_normal_user
+    if resource.email == 'guest@example.com'
+      redirect_to root_path, alert: 'ゲストユーザーは更新・削除できません'
+    end
+  end
 end
