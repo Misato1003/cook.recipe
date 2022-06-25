@@ -1,13 +1,12 @@
 <div class="cook-content">
   <h3>料理の一覧表</h3>
-  <table>
+  <table class="cook-index-table">
     <thead>
       <tr>
         <th>ID</th>
         <th>料理名</th>
-        <th>料理を作る際のポイント</th>
+        <th>料理を作るポイント</th>
         <th>料理の写真</th>
-        <th>料理の分類</th>
         <% if user_signed_in? && current_user != @cooks %>
           <th>お気に入り</th>
         <% end %>
@@ -19,29 +18,28 @@
     <tbody>
       <% @cooks.each do |cook| %>
         <tr>
-          <td><%= cook.id %></td>
-          <td><%= cook.name %></td>
-          <td><%= cook.point %></td>
-          <td><img src="<%= cook.image%>" class="cook-image" ></td>
-          <td><%= cook.target_cook %></td>
+          <th><%= cook.id %></th>
+          <td data-title="料理名" class="cook-title"><%= cook.name %></td>
+          <td data-title="料理を作るのポイント" class="point-cook"><%= simple_format(cook.point) %></td>
+          <td data-title="料理の写真"><img src="<%= cook.image%>" class="cook-image" ></td>
           <% if user_signed_in? && current_user != cook.users %>
             <% if current_user.liked_by?(cook.id) %>
-              <td>
+              <td data-title="お気に入り">
                 <%= link_to 'お気に入りをはずす', destroy_like_path(cook), method: :DELETE %>
               </td>
             <% else %>
-              <td>
+              <td data-title="お気に入り">
                 <%= link_to "お気に入り", create_like_path(cook), method: :POST %>
               </td>
             <% end %>
           <% end %>
-          <td>
+          <td data-title="詳細">
             <%= link_to "詳細", cook %>
           </td>
-          <td>
+          <td data-title="編集">
             <%= link_to "編集", [:edit, cook] %>
           </td>
-          <td>
+          <td data-title="削除">
             <%= link_to "削除", cook,method: :delete, data: { confirm: "本当に削除しますか?" } %>
           </td>
         </tr>

@@ -1,5 +1,5 @@
 <h3>お気に入り済みの料理</h3>
-<table>
+<table class="cook-index-table">
   <thead>
     <tr>
       <th>ID</th>
@@ -13,13 +13,13 @@
     <% if @like_list.present? %>
       <% @like_list.each do |cook| %>
         <tr>
-          <td><%= cook.id %></td>
-          <td><%= cook.name %></td>
-          <td><%= cook.point %></td>
-          <td>
+          <th><%= cook.id %></th>
+          <td data-title="料理名" class="cook-title"><%= cook.name %></td>
+          <td data-title="料理の作る際のポイント" class="point-cook"><%=  simple_format(cook.point) %></td>
+          <td data-title="料理の写真">
             <img src="<%= cook.image %>" class="cook-image" >
           </td>
-          <td>
+          <td data-title="料理の詳細">
             <%= link_to "料理の詳細", cook %>
           </td>
         </tr>

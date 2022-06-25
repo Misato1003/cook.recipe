@@ -11,15 +11,15 @@
   </tr>
   <tr>
     <th>料理のポイント</th>
-    <td><%= @cook.point %></td>
+    <td><%= simple_format(@cook.point) %></td>
   </tr>
   <tr>
     <th>材料</th>
-    <td><%= @cook.ingredient %></td>
+    <td><%= simple_format(@cook.ingredient) %></td>
   </tr>
   <tr>
     <th>作り方</th>
-    <td><%= @cook.recipe %></td>
+    <td><%= simple_format(@cook.recipe) %></td>
   </tr>
   <tr>
     <th>料理にかかった時間</th>

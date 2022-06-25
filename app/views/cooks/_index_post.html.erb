@@ -12,7 +12,7 @@
       <tr>
         <td><%= post.nickname %></td>
         <td><%= post.created_at.to_s(:datetime_jp) %></td>
-        <td><%= post.content %></td>
+        <td><%= simple_format(post.content) %></td>
       </tr>
     <% end %>
   </tbody>
