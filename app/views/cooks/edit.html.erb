@@ -1,4 +1,6 @@
 <% provide :title, @cook.name %>
+<!--エラーメッセージ-->
+<%= render "shared/error", obj: @cook %>
 <h3>料理の編集</h3>
 <%= form_with model: @cook do |f| %>
   <table class="cook-table">
