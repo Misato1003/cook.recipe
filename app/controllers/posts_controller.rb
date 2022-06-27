@@ -14,10 +14,10 @@ class PostsController < ApplicationController
     @post = Post.new(post_params.merge(user_id: current_user.id))
     if @post.save
       flash[:notice] = "新規投稿しました"
-      redirect_to :cooks
+      redirect_back(fallback_location: cook_path(@cooks.ids))
     else
       flash[:notice] = "新規投稿が登録できませんでした"
-      redirect_to :cooks
+      redirect_back(fallback_location: cook_path(@cooks.ids))
     end
   end
 

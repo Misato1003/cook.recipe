@@ -6,6 +6,9 @@ class ApplicationController < ActionController::Base
   # 料理の検索ができる
   before_action :cook_search
 
+  # deviseでログイン後、ログインする前のページに行く。
+  after_action :store_location
+
   protected
 
   # devise　(ユーザー名、プロフィール画像、一言紹介が登録できないため)
@@ -28,5 +31,26 @@ class ApplicationController < ActionController::Base
 
   def cooks
     params.require(:q).permit(:sorts)
+  end
+
+  # deviseでログイン後、ログインする前にいく
+  def store_location
+    # ログイン直前のリクエストをセッションに保存
+    if request.fullpath != "/users/sign_in" && \
+        request.fullpath != "/users/sign_up" && \
+        request.fullpath != "/users/password" && \
+        !request.xhr?
+      session[:previous_url] = request.fullpath
+    end
+  end
+
+  # ログイン後のリダイレクトをログイン前のページにする場合
+  def after_sign_in_path_for(resource)
+    session[:previous_url] || root_path
+  end
+
+  # ログアウト後のリダイレクトをログアウト前のページにする場合
+  def after_sign_out_path_for(resource)
+    session[:previous_url] || root_path
   end
 end
