@@ -1,7 +1,8 @@
 <h3>投稿一覧表</h3>
-<table>
+<table class="cook-index-table">
   <thead>
     <tr>
+      <th>ID</th>
       <th>投稿者の名前</th>
       <th>投稿した日付</th>
       <th>投稿内容</th>
@@ -12,11 +13,12 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= post.nickname %></td>
-        <td><%= post.created_at.to_s(:datetime_jp) %></td>
-        <td><%= simple_format(post.content) %></td>
-        <td><%= link_to "編集", [:edit, post] %></td>
-        <td><%= link_to "削除", post, method: :delete, data: { confirm: "本当に削除しますか?" } %></td>
+        <th><%= post.user_id %></th>
+        <td data-tile="投稿者の名前"><%= post.nickname %></td>
+        <td data-title="投稿した日付"><%= post.created_at.to_s(:datetime_jp) %></td>
+        <td data-title="投稿内容"><%= simple_format(post.content) %></td>
+        <td data-title="投稿編集"><%= link_to "編集", [:edit, post] %></td>
+        <td data-title="削除"><%= link_to "削除", post, method: :delete, data: { confirm: "本当に削除しますか?" } %></td>
       </tr>
     <% end %>
   </tbody>
