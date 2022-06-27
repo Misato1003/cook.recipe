@@ -20,7 +20,7 @@
       <p><%= link_to "料理の一覧表", cooks_path, class: "header-login-btn" %></p>
       <p><%= link_to "トップページ", root_path, class: "header-login-btn" %></p>
       <p>
-        <%= link_to 'ゲストログイン（閲覧用）', home_guest_sign_in_path, method: :post, class: "header-login-btn" %>
+        <%= link_to 'ゲストログイン', home_guest_sign_in_path, method: :post, class: "header-login-btn" %>
       </p>
     </div>
     <% if user_signed_in? %>
