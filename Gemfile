@@ -84,3 +84,6 @@ gem 'carrierwave'
 gem 'mini_magick'
 # 検索機能
 gem 'ransack'
+
+#ローカル環境で画像の保存先をS3に変更する
+gem "aws-sdk-s3", require: false
