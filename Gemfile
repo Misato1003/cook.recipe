@@ -56,7 +56,7 @@ group :development do
   # rubocopの導入
   gem 'rubocop', require: false
   gem 'rubocop-airbnb'
-  #ER図
+  # ER図
   gem 'rails-erd'
 end
 
@@ -66,8 +66,6 @@ group :test do
   gem 'selenium-webdriver', '>= 4.0.0.rc1'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
-  # ER図
-  gem 'rails-erd'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -85,5 +83,5 @@ gem 'mini_magick'
 # 検索機能
 gem 'ransack'
 
-#ローカル環境で画像の保存先をS3に変更する
+# ローカル環境で画像の保存先をS3に変更する
 gem "aws-sdk-s3", require: false

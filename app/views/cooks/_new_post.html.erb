@@ -1,4 +1,4 @@
-<h3>新規レビュー</h3>
+<h3>新規投稿</h3>
 <%= form_with model: @post do |f| %>
   <table>
     <tr>
@@ -13,6 +13,6 @@
   <%= f.hidden_field :cook_id, value: @cook.id %>
   <%= f.hidden_field :user_id, value: @user_id %>
   <div>
-    <p class="cook-butann"><%= f.submit "レビューを完了する", class: "cook-btn" %></p>
+    <p class="cook-butann"><%= f.submit "投稿する", class: "cook-btn" %></p>
   </div>
 <% end %>
