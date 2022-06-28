@@ -8,11 +8,6 @@ RSpec.describe "Posts", type: :request do
   end
 
   describe "Posts" do
-    it "statusが２００であること(index)" do
-      get posts_path
-      expect(response).to have_http_status(200)
-    end
-
     context "レビューの新規登録(cook_path)" do
       before do
         get cook_path(@cook.id)
@@ -54,18 +49,8 @@ RSpec.describe "Posts", type: :request do
         get post_path(@post.id)
       end
 
-      it "レビューの詳細を確認する際、ユーザーがログインした場合　statusが２００であること(show)" do
-        sign_in @user
-        get cook_path(@post.id)
+      it "statusが２００であること(show)" do
         expect(response).to have_http_status(200)
-      end
-
-      it "レビューの詳細を確認する際、ユーザーがログインしない場合　statusが302であること(show)" do
-        expect(response).to have_http_status(302)
-      end
-
-      it "レビューの詳細を見る際、ログインしていない場合、ログイン画面にいくこと" do
-        expect(response).to redirect_to "/users/sign_in"
       end
 
       it "レビュー内容が取得できていること" do

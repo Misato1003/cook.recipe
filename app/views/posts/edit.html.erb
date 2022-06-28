@@ -1,7 +1,7 @@
 <% provide :title, @post.cook.name %>
 <!--エラーメッセージ-->
 <%= render "shared/error", obj: @post %>
-<h3>レビューの編集</h3>
+<h3>投稿の編集</h3>
 <%= form_with model: @post do |f| %>
   <table>
     <tr>
@@ -9,12 +9,12 @@
       <td><%= f.text_field :nickname %></td>
     </tr>
     <tr>
-      <th><%= f.label :content, "レビュー内容" %></th>
+      <th><%= f.label :content, "投稿内容" %></th>
       <td><%= f.text_area :content ,class: "post-content" %></td>
     </tr>
   </table>
   <div class="post-box">
     <p><%= f.submit "編集を完了する", class: "post-btn" %></p>
-    <p><%= link_to "レビューの詳細", post_path , class: "post-box-btn" %></p>
+    <p><%= link_to "投稿の詳細", post_path , class: "post-box-btn" %></p>
   </div>
 <% end %>

@@ -1,17 +1,17 @@
 <% provide :title, @post.cook.name %>
 <%= render "cook_show.html" %>
-<h3>レビューの詳細</h3>
+<h3>投稿の詳細</h3>
 <table>
   <tr>
     <th>投稿者の名前</th>
     <td><%= @post.nickname %></td>
   </tr>
   <tr>
-    <th>レビューした日付</th>
+    <th>投稿した日付</th>
     <td><%= @post.created_at.to_s(:datetime_jp) %></td>
   </tr>
   <tr>
-    <th>レビュー内容</th>
+    <th>投稿内容</th>
     <td><pre><%= @post.content %></pre></td>
   </tr>
   <tr>
@@ -20,5 +20,8 @@
   </tr>
 </table>
 <div class="post-box">
-  <p><%= link_to "レビューの編集", [:edit, @post], class:"post-box-btn" %></p>
+  <p><%= link_to "投稿の編集", [:edit, @post], class:"post-box-btn" %></p>
+</div>
+<div class="post-box">
+  <p><%= link_to "料理の詳細", cook_path(@cooks.ids), class:"post-box-btn" %></p>
 </div>

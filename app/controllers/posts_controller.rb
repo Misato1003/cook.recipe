@@ -1,12 +1,10 @@
 class PostsController < ApplicationController
   # ログインしている人だけが投稿を行えるように[authenticate_user!]を使用
-  before_action :authenticate_user!, except: :index
-
+  before_action :authenticate_user!, except: [:show]
   # 他人に編集,削除ができないようした（投稿者自身が編集ができるようにした)
   before_action :correct_user_post, only: [:edit, :update, :destroy]
 
   def index
-    @posts = Post.all
   end
 
   def new
@@ -15,11 +13,11 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params.merge(user_id: current_user.id))
     if @post.save
-      flash[:notice] = "新規レビューしました"
-      redirect_to :posts
+      flash[:notice] = "新規投稿しました"
+      redirect_back(fallback_location: cook_path(@cooks.ids))
     else
-      flash[:notice] = "新規レビューが登録できませんでした"
-      redirect_to :posts
+      flash[:notice] = "新規投稿が登録できませんでした"
+      redirect_back(fallback_location: cook_path(@cooks.ids))
     end
   end
 
@@ -34,8 +32,8 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params.merge(user_id: current_user.id))
-      flash[:notice] = "レビューを更新しました"
-      redirect_to :posts
+      flash[:notice] = "投稿を更新しました"
+      redirect_to :cooks
     else
       render "edit"
     end
@@ -44,8 +42,8 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    flash[:notice] = "レビューを削除しました"
-    redirect_to :posts
+    flash[:notice] = "投稿を削除しました"
+    redirect_to :cooks
   end
 
   private
@@ -58,6 +56,6 @@ class PostsController < ApplicationController
   def correct_user_post
     @post = Post.find(params[:id])
     @user = @post.user_id
-    redirect_to(posts_path) unless @user == current_user.id
+    redirect_to(post_path) unless @user == current_user.id
   end
 end
