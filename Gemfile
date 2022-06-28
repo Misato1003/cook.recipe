@@ -85,4 +85,3 @@ gem 'ransack'
 
 # ローカル環境で画像の保存先をS3に変更する
 gem "aws-sdk-s3", require: false
-gem 'fog'
