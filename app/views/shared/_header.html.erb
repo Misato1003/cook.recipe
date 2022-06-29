@@ -19,9 +19,6 @@
     <div class="header-main">
       <p><%= link_to "料理の一覧表", cooks_path, class: "header-login-btn" %></p>
       <p><%= link_to "トップページ", root_path, class: "header-login-btn" %></p>
-      <p>
-        <%= link_to 'ゲストログイン', home_guest_sign_in_path, method: :post, class: "header-login-btn" %>
-      </p>
     </div>
     <% if user_signed_in? %>
       <div id="dropdown">
@@ -29,7 +26,7 @@
         <% if current_user.image.file == nil %>
           <img src="/assets/default_icon.png" class="default_image">
         <% else %>
-          <img src="<%= current_user.image %>" class="default_image">
+          <%= image_tag(current_user.image.to_s, class: "default_image") %>
         <% end %>
       </div>
       <nav class="menu-bar hidden">
