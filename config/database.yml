@@ -23,8 +23,6 @@ test:
 production:
   <<: *default
   adapter: postgresql
-  database: ImageUpload_production
-  username: ImageUpload
-  password: <%= ENV['IMAGEUPLOAD_DATABASE_PASSWORD'] %>
+  database: db/production.
   encoding: unicode
   pool: 5
