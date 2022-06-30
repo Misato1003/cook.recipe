@@ -144,6 +144,10 @@ fotter{
   justify-content: center;
 }
 
+.header-login-botn {
+  margin-top: -20px;
+}
+
 /*検索のところ*/
 .search {
   font-size: 20px;
