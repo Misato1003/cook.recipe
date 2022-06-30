@@ -19,9 +19,15 @@
       <% @cooks.each do |cook| %>
         <tr>
           <th><%= cook.id %></th>
-          <td data-title="料理名" class="cook-title"><%= cook.name %></td>
-          <td data-title="料理を作るのポイント" class="point-cook"><%= simple_format(cook.point) %></td>
-          <td data-title="料理の写真"><img src="<%= cook.image%>" class="cook-image" ></td>
+          <td data-title="料理名" class="cook-title">
+            <%= cook.name %>
+          </td>
+          <td data-title="料理を作るのポイント" class="point-cook">
+            <%= simple_format(cook.point) %>
+          </td>
+          <td data-title="料理の写真">
+            <%= image_tag(cook.image.to_s, class: "cook-image") %>
+          </td>
           <% if user_signed_in? && current_user != cook.users %>
             <% if current_user.liked_by?(cook.id) %>
               <td data-title="お気に入り">
@@ -29,7 +35,7 @@
               </td>
             <% else %>
               <td data-title="お気に入り">
-                <%= link_to "お気に入りを追加する", create_like_path(cook), method: :POST %>
+                <%= link_to "お気に入りに追加する", create_like_path(cook), method: :POST %>
               </td>
             <% end %>
           <% end %>

@@ -7,8 +7,8 @@
   </tr>
   <tr>
     <th>料理の写真</th>
-    <td><img src="<%= @cook.image %>" class="cook-image"></td>
-  </tr>
+    <td><%= image_tag(@cook.image.to_s, class: "cook-image") %></td>
+  </tr>  
   <tr>
     <th>料理のポイント</th>
     <td><%= simple_format(@cook.point) %></td>
@@ -32,6 +32,9 @@
 </table>
 <%= render "new_post" %>
 <div class="cook-box">
-  <p> <%= link_to "料理の編集に戻る", [:edit, @cook], class:"cook-box-btn" %></p>
+  <p> <%= link_to "料理の編集", [:edit, @cook], class:"cook-box-btn" %></p>
+</div>
+<div class="cook-box">
+  <p><%= link_to "料理の一覧表", cooks_path, class:"cook-box-btn" %></p>
 </div>
 <%= render "index_post" %>

@@ -17,14 +17,30 @@
     <% @results.each do |cook| %>
       <tr>
         <th><%= cook.id %></th>
-        <td data-title="料理名" class="cook-title"><%= cook.name %></td>
-        <td data-title="料理を作るのポイント" class="point-cook"><%= simple_format(cook.point) %></td>
-        <td data-title="料理の写真"><img src="<%= cook.image %>" class="cook-image"></td>
-        <td data-title="料理にかかった時間"><%= cook.time %></td>
-        <td data-title="料理の分類"><%= cook.target_cook %></td>
-        <td data-title="詳細"><%= link_to "詳細", cook %></td>
-        <td data-title="編集"><%= link_to "編集", edit_cook_path(cook) %></td>
-        <td data-title="削除"><%= link_to "削除", cook, method: :delete, date: { confirm:'Are you sure?' } %></td>
+        <td data-title="料理名" class="cook-title">
+          <%= cook.name %>
+        </td>
+        <td data-title="料理を作るのポイント" class="point-cook">
+          <%= simple_format(cook.point) %>
+        </td>
+        <td data-title="料理の写真">
+          <%= image_tag(cook.image.to_s, class: "cook-image") %>
+        </td>
+        <td data-title="料理にかかった時間">
+          <%= cook.time %>
+        </td>
+        <td data-title="料理の分類">
+          <%= cook.target_cook %>
+        </td>
+        <td data-title="詳細">
+          <%= link_to "詳細", cook %>
+        </td>
+        <td data-title="編集">
+          <%= link_to "編集", edit_cook_path(cook) %>
+        </td>
+        <td data-title="削除">
+          <%= link_to "削除", cook, method: :delete, date: { confirm:'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>

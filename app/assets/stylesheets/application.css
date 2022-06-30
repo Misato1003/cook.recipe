@@ -144,6 +144,10 @@ fotter{
   justify-content: center;
 }
 
+.header-login-botn {
+  margin-top: -20px;
+}
+
 /*検索のところ*/
 .search {
   font-size: 20px;
@@ -205,7 +209,7 @@ fotter{
     top: 80px;
     right: 8px;
     background-color: white;
-    margin-left: -200px;
+    margin-left: -140px;
     font-size: 8px;
     margin-top: 115px;
     margin-right: inherit;
@@ -223,7 +227,8 @@ fotter{
 }
 
 #dropdown {
-  margin: auto;
+  margin-top: 50px;
+  margin-left: 30px;
 }
 
 @media screen and (max-width: 769px) {

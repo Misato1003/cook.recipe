@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.5'
+ruby '3.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.6'
@@ -85,3 +85,7 @@ gem 'ransack'
 
 # ローカル環境で画像の保存先をS3に変更する
 gem "aws-sdk-s3", require: false
+
+gem 'net-smtp'
+gem 'net-imap'
+gem 'net-pop'

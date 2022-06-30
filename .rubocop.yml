@@ -17,4 +17,6 @@ AllCops:
     - 'spec/rails_helper.rb'
     - 'spec/spec_helper.rb'
     - !ruby/regexp /old_and_unused\.rb$/
+    - 'spec/factories/*'
+    - 'spec/support/factory_bot.rb'
     
