@@ -3,7 +3,7 @@ CarrierWave.configure do |config|
     provider: 'AWS',
     aws_access_key_id: ENV['ACCESS_KEY_ID'],
     aws_secret_access_key: ENV['SECRET_ACCESS_KEY'],
-    region: ENV['REGION']  # リージョンの位置によって記述が異なります
+    region: 'ap-northeast-1'  # リージョンの位置によって記述が異なります
   }
 
     case Rails.env
