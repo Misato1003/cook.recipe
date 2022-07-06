@@ -26,7 +26,7 @@
         <% if current_user.image.file == nil %>
           <img src="/assets/default_icon.png" class="default_image">
         <% else %>
-          <%= image_tag(current_user.image.url, class: "default_image") %>
+          <%= image_tag(current_user.image_url, class: "default_image") %>
         <% end %>
       </div>
       <nav class="menu-bar hidden">

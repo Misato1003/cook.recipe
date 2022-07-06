@@ -8,7 +8,7 @@
     <% if current_user.image.file == nil %>
       <img src="/assets/default_icon.png" class="default_image">
     <% else %>
-      <%= image_tag(current_user.image.url, class: "user-image") %>
+      <%= image_tag(current_user.image_url, class: "user-image") %>
     <% end %>
   
     <div class="field">

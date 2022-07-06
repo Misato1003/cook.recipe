@@ -17,7 +17,7 @@
           <td data-title="料理名" class="cook-title"><%= cook.name %></td>
           <td data-title="料理の作る際のポイント" class="point-cook"><%=  simple_format(cook.point) %></td>
           <td data-title="料理の写真">
-            <%= image_tag(cook.image.url, class: "cook-image") %>
+            <%= image_tag(cook.image_url, class: "cook-image") %>
           </td>
           <td data-title="料理の詳細">
             <%= link_to "料理の詳細", cook %>
