@@ -25,7 +25,7 @@
         </td>
         <td data-title="料理の写真">
           <% if cook.image? %>
-            <%= image_tag(cook.image_url, class: "cook-image") %>
+            <%= image_tag(cook.image.url, class: "cook-image") %>
           <% else %>
             <div></div>
           <% end %>

@@ -12,7 +12,7 @@
       <th><%= f.label :image, "料理の写真" %></th>
       <td>
         <% if @cook.image? %>
-          <%= image_tag(@cook.image_url, class: "cook-image") %><br>
+          <%= image_tag(@cook.image.url, class: "cook-image") %><br>
         <% else %>
           <div></div>
         <% end %>

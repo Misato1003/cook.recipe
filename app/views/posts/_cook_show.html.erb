@@ -8,7 +8,7 @@
     <th>料理の写真</th>
     <td>
       <% if @post.cook.image? %>
-        <%= image_tag(@post.cook.image_url, class: "cook-image") %>
+        <%= image_tag(@post.cook.image.url, class: "cook-image") %>
       <% else %>
         <div></div>
       <% end %>
