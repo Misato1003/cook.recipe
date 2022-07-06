@@ -7,7 +7,13 @@
   </tr>
   <tr>
     <th>料理の写真</th>
-    <td><%= image_tag(@cook.image_url, class: "cook-image") %></td>
+    <td>
+      <% if @cook.image? %>
+        <%= image_tag(@cook.image_url, class: "cook-image") %>
+      <% else %>
+        <div></div>
+      <% end %>
+    </td>
   </tr>  
   <tr>
     <th>料理のポイント</th>

@@ -5,7 +5,7 @@
     <%= render "devise/shared/error_messages", resource: resource %>
   
     <!--プロフィールの画像を表示することができる-->
-    <% if current_user.image.file == nil %>
+    <% if current_user.image_url == nil %>
       <img src="/assets/default_icon.png" class="default_image">
     <% else %>
       <%= image_tag(current_user.image_url, class: "user-image") %>

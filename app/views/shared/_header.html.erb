@@ -23,7 +23,7 @@
     <% if user_signed_in? %>
       <div id="dropdown">
         <l><%= current_user.username %></l>
-        <% if current_user.image.file == nil %>
+        <% if current_user.image.url == nil %>
           <img src="/assets/default_icon.png" class="default_image">
         <% else %>
           <%= image_tag(current_user.image_url, class: "default_image") %>
