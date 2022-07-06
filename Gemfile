@@ -14,6 +14,7 @@ end
 # 本番ではpostgressを使用する
 group :production do
   gem 'pg'
+  gem 'fog-aws'
 end
 
 # Use Puma as the app server
