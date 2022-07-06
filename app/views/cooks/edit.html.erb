@@ -11,7 +11,7 @@
     <tr>
       <th><%= f.label :image, "料理の写真" %></th>
       <td>
-        <%= image_tag(@cook.image.to_s, class: "cook-image") %><br>
+        <%= image_tag(@cook.image.url, class: "cook-image") %><br>
         <%= f.file_field :image %>
       </td>
     </tr>
