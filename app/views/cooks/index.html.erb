@@ -26,7 +26,7 @@
             <%= simple_format(cook.point) %>
           </td>
           <td data-title="料理の写真">
-            <%= image_tag(cook.image.url, class: "cook-image") %>
+            <%= image_tag(cook.image.to_s, class: "cook-image") %>
           </td>
           <% if user_signed_in? && current_user != cook.users %>
             <% if current_user.liked_by?(cook.id) %>

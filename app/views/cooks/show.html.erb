@@ -7,7 +7,7 @@
   </tr>
   <tr>
     <th>料理の写真</th>
-    <td><%= image_tag(@cook.image.url, class: "cook-image") %></td>
+    <td><%= image_tag(@cook.image.to_s, class: "cook-image") %></td>
   </tr>  
   <tr>
     <th>料理のポイント</th>
