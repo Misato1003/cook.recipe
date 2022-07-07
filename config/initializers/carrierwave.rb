@@ -12,6 +12,7 @@ if Rails.env.production?
       :aws_secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'],
     }
     config.fog_directory = ENV['AWS_BUCKET']
+    config.asset_host = 'https://s3.amazonaws.com/misato11'
     config.fog_public = false
   end
 end
