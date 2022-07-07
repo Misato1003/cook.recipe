@@ -20,7 +20,7 @@ class CooksController < ApplicationController
     @cook.user_id = current_user.id
     if @cook.save
       flash[:notice] = "料理の新規登録しました"
-      redirect_to :cooks
+      redirect_to cooks_path
     else
       render "new"
     end
@@ -40,7 +40,7 @@ class CooksController < ApplicationController
     @cook = Cook.find(params[:id])
     if @cook.update(cook_params.merge(user_id: current_user.id))
       flash[:notice] = "料理の情報を更新しました"
-      redirect_to :cooks
+      redirect_to cooks_path
     else
       render "edit"
     end
@@ -50,7 +50,7 @@ class CooksController < ApplicationController
     @cook = Cook.find(params[:id])
     @cook.destroy
     flash[:notice] = "料理を削除しました"
-    redirect_to :cooks
+    redirect_to cooks_path
   end
 
   # 検索できる(料理)
