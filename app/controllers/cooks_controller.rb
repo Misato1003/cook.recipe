@@ -20,7 +20,7 @@ class CooksController < ApplicationController
     @cook.user_id = current_user.id
     if @cook.save
       flash[:notice] = "料理の新規登録しました"
-      redirect_to cooks_path(@cook.id)
+      redirect_to cooks_path
     else
       render "new"
     end
