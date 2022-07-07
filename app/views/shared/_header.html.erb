@@ -23,10 +23,10 @@
     <% if user_signed_in? %>
       <div id="dropdown">
         <l><%= current_user.username %></l>
-        <% if current_user.image.url == nil %>
+        <% if current_user.image.file == nil %>
           <img src="/assets/default_icon.png" class="default_image">
         <% else %>
-          <%= image_tag(current_user.image.url, class: "default_image") %>
+          <%= image_tag(current_user.image.to_s, class: "default_image") %>
         <% end %>
       </div>
       <nav class="menu-bar hidden">
