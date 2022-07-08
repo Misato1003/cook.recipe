@@ -14,7 +14,7 @@ if Rails.env.production?
     config.fog_directory = ENV['AWS_BUCKET']
     config.asset_host = 'https://s3.amazonaws.com/misato11'
     config.fog_public = false
-    config.storage :fog
+    config.storage = :fog
     config.fog_provider = 'fog/aws'
   end
 end
