@@ -50,7 +50,7 @@
             <%= link_to "編集", [:edit, cook] %>
           </td>
           <td data-title="削除">
-            <%= link_to "削除", cook,method: :delete, data: { confirm: "本当に削除しますか?" } %>
+            <%= link_to "削除", cook ,method: :delete, data: { confirm: "本当に削除しますか?" }, class: "onclick"  %>
           </td>
         </tr>
       <% end %>  
