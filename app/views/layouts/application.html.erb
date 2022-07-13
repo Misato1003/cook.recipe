@@ -101,11 +101,11 @@
       });
     });
     
-    
-     $(".onclick").on("click", function() {
-        setTimeout(function() {
+    /*料理一覧表の削除ボタンが押されると、料理の一覧表に行く（３秒） (本番環境だけ）*/
+    $(".onclick").on("click", function() {
+      setTimeout(function() {
         location.href= "https://new-cook-recipe.herokuapp.com/cooks";
-        }, 3000);
-      });
+      }, 3000);
+    });
   </script>
 </html>
