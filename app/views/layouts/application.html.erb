@@ -105,9 +105,14 @@
     /*料理の編集、料理の新規登録の完了ボタンを押すと、料理の一覧表に行く（本番環境だけ)*/
     $(".onclick").on("click", function() {
       setTimeout(function() {
-        var location.href= "https://new-cook-recipe.herokuapp.com/cooks";
-        location.reload(location.href);
+        location.href= "https://new-cook-recipe.herokuapp.com/cooks";
       }, 3000);
+      $(window).load(function(){
+        setTimeout(function() {
+        // reloadメソッドによりページを再読み込み
+          window.location.reload(location.href);
+        }, 3000);
+      });
     });
   </script>
 </html>
