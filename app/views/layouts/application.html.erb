@@ -106,13 +106,8 @@
     $(".onclick").on("click", function() {
       setTimeout(function() {
         location.href= "https://new-cook-recipe.herokuapp.com/cooks";
+        location.replace(location.href);
       }, 3000);
-      $(window).load(function(){
-        setTimeout(function() {
-        // reloadメソッドによりページを再読み込み
-          window.location.reload(true);
-        }, 3000);
-      });
     });
   </script>
 </html>
