@@ -107,10 +107,9 @@
     setTimeout(function() {
       window.location.href= "https://new-cook-recipe.herokuapp.com/cooks/";
     }, 3000);
-  });
-  
-  $(".cook-content").on("load", function() {
-    window.location.reload();
+    $(".onclick").on("unload", function() {
+      window.location.reload();
+    });
   });
     
   </script>
