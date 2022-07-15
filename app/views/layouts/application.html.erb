@@ -112,7 +112,7 @@
         // bfcache発動時の処理
           var url = $(".image-cookImage").attr("src");
           $(".image-cookImage").attr("src", url + `?v=${Math.random()}`);
-          window.location.reload(true);
+          window.location.href= "https://new-cook-recipe.herokuapp.com/cooks/";
         }
       });
     });
