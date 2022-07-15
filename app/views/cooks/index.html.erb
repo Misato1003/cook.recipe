@@ -57,3 +57,19 @@
     </tbody>
   </table>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    function doReload() {
+ 
+    // reloadメソッドによりページをリロード
+      window.location.reload();
+    }
+ 
+    window.addEventListener('load', function () {
+      setTimeout(function() {
+    // ページ表示完了した3秒後にリロード
+        window.location.reload();
+      }, 3000);
+    });
+  </script>
