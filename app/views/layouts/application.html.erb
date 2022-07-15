@@ -103,10 +103,14 @@
     
     /*料理一覧表の削除ボタンが押されると、料理の一覧表に行く（３秒） (本番環境だけ）*/
     /*料理の編集、料理の新規登録の完了ボタンを押すと、料理の一覧表に行く（本番環境だけ)*/
-  $(".onclick").on("click, .onclick", function() {
+  $(".onclick").on("click", function() {
     setTimeout(function() {
       window.location.href= "https://new-cook-recipe.herokuapp.com/cooks/";
     }, 3000);
+  });
+  
+  $(".cook-content").on("load", function() {
+    window.location.reload();
   });
     
   </script>
