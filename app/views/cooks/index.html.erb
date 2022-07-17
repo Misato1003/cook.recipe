@@ -50,7 +50,7 @@
             <%= link_to "編集", [:edit, cook] %>
           </td>
           <td data-title="削除">
-            <%= link_to "削除", cook ,method: :delete, data: { confirm: "本当に削除しますか?" }, class: "onclick" %>
+            <%= link_to "削除", cook ,method: :delete, data: { confirm: "本当に削除しますか?" }, class: "onclick", onClick: "return Check()" %>
           </td>
         </tr>
       <% end %>  
@@ -60,17 +60,7 @@
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script>
-    /*function doReload() {
-    // reloadメソッドによりページをリロード
-      window.location.reload();
-    }
-    
-    window.addEventListener('load', function () {
- 
-    // ページ表示完了した5秒後にリロード
-      setTimeout(doReload, 5000);
-    }); */
-    
+  
     $(document).ready( function(){
       if (window.name != "test") {
         alert("再読みします");
@@ -81,4 +71,13 @@
       }
     });
     
+    function Check(){
+      var checked = confirm("本当に削除しますか?");
+      if (checked == true) {
+          return true;
+          window.location.href = "https://new-cook-recipe.herokuapp.com/cooks";
+      } else {
+          return false;
+      }
+    }
   </script>

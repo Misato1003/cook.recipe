@@ -107,12 +107,6 @@
     setTimeout(function() {
       window.location.href = "https://new-cook-recipe.herokuapp.com/cooks";
     }, 3000);
-    window.addEventListener('pageshow', function (event) {
-      if (event.persisted) {
-        // bfcache発動時の処理
-        window.location.reload();
-      }
-    });
   });
   
   </script>
