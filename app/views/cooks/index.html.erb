@@ -50,7 +50,7 @@
             <%= link_to "編集", [:edit, cook] %>
           </td>
           <td data-title="削除">
-            <%= link_to "削除", cook ,method: :delete, data: { confirm: "本当に削除しますか?" }, class: "onclick"  %>
+            <%= link_to "削除", cook ,method: :delete, data: { confirm: "本当に削除しますか?" }, class: "onclick clickone"  %>
           </td>
         </tr>
       <% end %>  
@@ -72,12 +72,18 @@
     }); */
     
     $(document).ready( function(){
-    if (window.name != "test") {
-        alert("reload");
+      if (window.name != "test") {
+        alert("再読みします");
         location.reload();
         window.name = "test";
-    } else {
+      } else {
         window.name = "";
-    }
-});
+      }
+    });
+    
+    $(".clickone").on("click", function() {
+      setTimeout(function() {
+      window.location.href= "https://new-cook-recipe.herokuapp.com/cooks/";
+      }, 3000);
+    });
   </script>
