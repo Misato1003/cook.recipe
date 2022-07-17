@@ -60,17 +60,23 @@
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script>
-    function doReload() {
- 
+    /*function doReload() {
     // reloadメソッドによりページをリロード
       window.location.reload();
     }
+    
+    window.addEventListener('load', function () {
  
-    /*window.addEventListener('load', function () {
- 
-    // ページ表示完了した1秒後にリロード
-      window.location.reload();
+    // ページ表示完了した5秒後にリロード
+      setTimeout(doReload, 5000);
     }); */
     
-    
+    $(document).ready( function(){
+    if (window.name != "test") {
+        location.reload();
+        window.name = "test";
+    } else {
+        window.name = "";
+    }
+});
   </script>
