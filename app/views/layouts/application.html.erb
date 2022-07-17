@@ -107,10 +107,10 @@
     setTimeout(function() {
       window.location.href = "https://new-cook-recipe.herokuapp.com/cooks";
     }, 3000);
-    $(window).load(function(){
+    $(window).on('unload', function(){
       setTimeout(function() {
         // reloadメソッドによりページを再読み込み
-        window.location.reload(true);
+        window.location.reload();
       }, 3000);
     });
   });
