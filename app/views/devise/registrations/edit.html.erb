@@ -68,20 +68,10 @@
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script>
-    var user = KiiUser.getCurrentUser();
-  
     $(".click-one").on("click", function() {
-      user.refresh().then(
-        function(theUser) {
-          setTimeout(function() {
-            window.location.href = "https://new-cook-recipe.herokuapp.com/cooks";
-          }, 3000);
-        });
-    });
-    
-      /*setTimeout(function() {
+      setTimeout(function() {
         window.location.href = "https://new-cook-recipe.herokuapp.com/cooks";
       }, 3000);
-    }); */
+    });
   </script>
   
