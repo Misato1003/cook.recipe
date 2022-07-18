@@ -69,10 +69,10 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script>
     $(".click-one").on("click", function() {
-      Nebula.User.current()
-        .then(function(user) {
+      Nebula.User.update(user)
+        .then(function(userObj) {
           setTimeout(function() {
-            window.location.href = "https://new-cook-recipe.herokuapp.com/cooks";
+            userObj: window.location.href = "https://new-cook-recipe.herokuapp.com/cooks";
           }, 3000);
         });
     });
