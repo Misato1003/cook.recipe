@@ -68,11 +68,13 @@
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script>
+    var user = KiiUser.getCurrentUser();
+  
     $(".click-one").on("click", function() {
-      Nebula.User.update(user)
-        .then(function(userObj) {
+      user.refresh().then(
+        function(theUser) {
           setTimeout(function() {
-            userObj: window.location.href = "https://new-cook-recipe.herokuapp.com/cooks";
+            window.location.href = "https://new-cook-recipe.herokuapp.com/cooks";
           }, 3000);
         });
     });
