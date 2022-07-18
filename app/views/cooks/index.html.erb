@@ -75,6 +75,7 @@
       var checked = confirm("本当に削除しますか?");
       if (checked == true) {
           window.location.href = "https://new-cook-recipe.herokuapp.com/cooks";
+          history.back();
       } else {
           return false;
       }
