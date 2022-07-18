@@ -69,9 +69,17 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script>
     $(".click-one").on("click", function() {
-      setTimeout(function() {
-        window.location.href(/registration_path(resource_name)) ;
-      }, 3000);
+      Nebula.User.current()
+        .then(function(user) {
+          setTimeout(function() {
+            window.location.href = "https://new-cook-recipe.herokuapp.com/cooks";
+          }, 3000);
+        });
     });
+    
+      /*setTimeout(function() {
+        window.location.href = "https://new-cook-recipe.herokuapp.com/cooks";
+      }, 3000);
+    }); */
   </script>
   
