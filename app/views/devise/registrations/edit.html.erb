@@ -55,7 +55,7 @@
     </div>
 
     <div class="actions">
-      <%= f.submit t('.update') %>
+      <%= f.submit t('.update') , class: "click-one"%>
     </div>
   <% end %>
 
@@ -65,3 +65,12 @@
 
   <%= link_to t('devise.shared.links.back'), :back %>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(".click-one").on("click", function() {
+      setTimeout(function() {
+        window.location.href = "https://new-cook-recipe.herokuapp.com";
+      }, 3000);
+    });
+  </script>

@@ -24,7 +24,7 @@
       <div id="dropdown">
         <l><%= current_user.username %></l>
         <% if current_user.image.file == nil %>
-          <img src="/assets/default_icon.png" class="default_image">
+          <img src="/assets/default_icon.jpeg" class="default_image">
         <% else %>
           <%= image_tag(current_user.image.url, class: "default_image") %>
         <% end %>
